@@ -1,14 +1,63 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome</title>
+    <style>
+        body {
+            background-color: #f8f9fa; /* Light gray background */
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0; /* Remove default body margin */
+            padding: 20px; /* Padding around the body */
+        }
+        header, footer {
+            text-align: center;
+            margin: 20px 0; /* Margin around header and footer */
+        }
+        h1 {
+            color: #333; /* Dark gray for headers */
+        }
+        h2 {
+            margin: 10px 0; /* Spacing around sub-headings */
+            color: #555; /* Medium gray for sub-headings */
+        }
+        nav {
+            margin: 20px 0; /* Margin for navigation */
+        }
+        ul {
+            list-style-type: none; /* No bullet points */
+            padding: 0; /* Remove default padding */
+        }
+        ul li {
+            padding: 10px; /* Padding inside each list item */
+            margin: 5px 0; /* Space between items */
+            background-color: #e9ecef; /* Light gray for list items */
+            border: 1px solid #ccc; /* Light border for items */
+        }
+        a {
+            color: #007bff; /* Bootstrap primary color for links */
+            text-decoration: none; /* No underline */
+        }
+        a:hover {
+            text-decoration: underline; /* Underline on hover */
+        }
+        img {
+            width: 50%; /* Set image width to 50% of its container */
+            max-width: 300px; /* Maximum width of the image */
+            height: auto; /* Maintain aspect ratio */
+        }
+    </style>
+</head>
 <body>
-<script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
-<header>
-    <h1>Welcome Gharzai Brand</h1>
-</header>
+    <div data-include="components/header.html"></div>
+    <main>
+        <h2>Welcome to my style Folder!</h2>
+        <p>This is one of my ITIS 3135 folders. Here you will find default related to the course.</p>
+     </main>
 
-<footer>
-    <p>Thanks </p>
-</footer>
-
+   <div data-include=" components/footer.html"></div>
+    <script src="scripts/HTMLInclude.min.js"></script>
 </body>
 </html>

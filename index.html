@@ -3,64 +3,74 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome to Gharzai Brand</title>
+    <title>Welcome to Afghan Brand</title>
+    
     <style>
         body {
-            background-color: #d3d3d3; /* Light gray background */
+            background-color: #f8f9fa; /* Light gray background */
             font-family: Arial, sans-serif;
             line-height: 1.6;
+            margin: 0; /* Remove default body margin */
             padding: 20px; /* Padding around the body */
         }
-        nav {
-            background-color: #ffffff; /* White background for the link box */
-            border: 1px solid #ccc; /* Light gray border */
-            padding: 15px; /* Padding inside the box */
-            border-radius: 5px; /* Rounded corners */
+        header, footer {
+            text-align: center;
+            margin: 20px 0; /* Margin around header and footer */
         }
-        nav h2 {
-            color: green; /* Green for the heading */
+        h1 {
+            color: #333; /* Dark gray for headers */
+        }
+        h2 {
+            margin: 10px 0; /* Spacing around sub-headings */
+            color: #555; /* Medium gray for sub-headings */
+        }
+        nav {
+            margin: 20px 0; /* Margin for navigation */
         }
         ul {
-            list-style-type: none; /* Remove default bullets */
-            padding: 0; /* Remove padding */
+            list-style-type: none; /* No bullet points */
+            padding: 0; /* Remove default padding */
         }
         ul li {
-            margin: 5px 0; /* Spacing between list items */
+            padding: 10px; /* Padding inside each list item */
+            margin: 5px 0; /* Space between items */
+            background-color: #e9ecef; /* Light gray for list items */
+            border: 1px solid #ccc; /* Light border for items */
         }
-        ul li a {
-            text-decoration: none; /* Remove underline from links */
-            color: #007BFF; /* Link color */
+        a {
+            color: #007bff; /* Bootstrap primary color for links */
+            text-decoration: none; /* No underline */
         }
-        ul li a:hover {
+        a:hover {
             text-decoration: underline; /* Underline on hover */
         }
+        img {
+            width: 50%; /* Set image width to 50% of its container */
+            max-width: 300px; /* Maximum width of the image */
+            height: auto; /* Maintain aspect ratio */
+        }
     </style>
-    <script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <div data-include="itis3135/components/header.html"></div>
 
     <main>
-        <img src="https://i.pinimg.com/originals/1b/44/c3/1b44c31293e2d42548fd280c9597b28f.jpg" alt="Afghani clothing" width="100">
-        <h1>Welcome to Gharzai Brand</h1>
-        <p>Discover handmade clothing created by Afghan women. Afghani cloth culture is deeply tied to tradition and identity.</p>
+        <img src="https://i.pinimg.com/originals/1b/44/c3/1b44c31293e2d42548fd280c9597b28f.jpg" alt="Afghani clothing">
+        <p>Afghanistan has a rich cultural heritage shaped by Central Asian, Persian, South Asian, and Middle Eastern influences. 
+            Clothing in Afghanistan is not just about fashion—it reflects identity, ethnicity, region, religion, and tradition.
+            
+            Discover handmade clothing created by Afghan women. Afghani cloth culture is deeply tied to tradition and identity.</p>
         <p>More than just what people wear, these clothes show history, pride, and cultural values passed down through generations.</p>
 
         <nav>
-            <h2>Get to Know More About Gharzai</h2>
+            <h2>Get to Know More About Afghan</h2>
             <ul>
                 <li><a href="itis3135/index.html">ITIS 3135 Folder</a></li>
                 <li><a href="introduction.html">Introduction</a></li>
-                <li><a href="itis3135/website_evaluations.html">Gharzai Website Evaluations</a></li>
+                <li><a href="itis3135/website_evaluations.html">Afghan Website Evaluations</a></li>
+                <li><a href="itis3135/contact.html">Contact Us</a></li> <!-- Link to contact page -->
             </ul>
         </nav>
-
-        <section>
-            <h2>Contact Us</h2>
-            <p>Phone: 980-229-9069</p>
-            <p>Email: mashalgharzai0@gmail.com</p>
-            <p>Address: 4421 Crest Ln, Huntersville, NC 28078</p>
-        </section>
     </main>
 
     <div data-include="itis3135/components/footer.html"></div>

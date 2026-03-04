@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cooking Afghani Foods</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <style>
+        body {
+            background-color: #fcf8e3; /* Light beige background */
+            font-family: 'Arial', sans-serif; /* Clear font */
+        }
+        header {
+            background-color: #b19554; /* Warm brown color */
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        footer {
+            background-color: #333; /* Dark footer */
+            color: white;
+            text-align: center;
+            padding: 15px;
+        }
+        nav a {
+            margin: 15px;
+            color: #f0e68c; /* Light yellow links */
+            text-decoration: none; /* No underline */
+        }
+        nav a:hover {
+            text-decoration: underline; /* Underline on hover */
+        }
+        section {
+            display: none; /* Hide all sections initially */
+            padding: 20px;
+            margin: 20px;
+            border-radius: 8px;
+            background-color: #fff; /* White sections */
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        .active {
+            display: block; /* Show active section */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Cooking Afghani Foods</h1>
+        <nav>
+            <a href="#" onclick="showSection('about')">Who</a>
+            <a href="#" onclick="showSection('home')">What</a>
+            <a href="#" onclick="showSection('when')">When</a>
+            <a href="#" onclick="showSection('where')">Where</a>
+            <a href="#" onclick="showSection('how')">How</a>
+            <a href="#" onclick="showSection('why')">Why</a>
+        </nav>
+    </header>
+    
+    <section id="home" class="active">
+        <h2>What (Home)</h2>
+        <p>Welcome to my space dedicated to Afghani cooking! Discover the rich flavors and traditions of Afghan cuisine.</p>
+        <figure>
+            <img src="https://as1.ftcdn.net/v2/jpg/07/07/98/88/1000_F_707988898_0aCEOTXws6Pt8h8ccb2AiB1MYESX6voF.jpg" alt="Delicious Afghan Rice and Meat" width="300" />
+            <figcaption>A delicious plate of Afghan rice and meat.</figcaption>
+        </figure>
+        <p><em>AI Prompt: Create an introduction for a cooking website focused on Afghani cuisine.</em></p>
+    </section>
+    
+    <section id="about">
+        <h2>Who</h2>
+        <p>I'm passionate about cooking and love sharing the vibrant flavors of Afghani cuisine with everyone. My journey began in my family kitchen, where I learned the secrets of traditional recipes.</p>
+        <p>Cooking is more than just a hobby for me—it's a way to celebrate culture and tradition.</p>
+        <p>When I'm not cooking, I'm often scoring events, mixing my love for food and community.</p>
+    </section>
+    
+    <section id="when">
+        <h2>When</h2>
+        <p>The best times to enjoy Afghani food are during family gatherings and celebrations, where meals are shared and stories are told.</p>
+        <p>Seasonal ingredients also influence the recipes I choose, particularly during harvest festivals.</p>
+        <p>Cooking feels most vibrant in the summer when fresh vegetables are abundant.</p>
+    </section>
+    
+    <section id="where">
+        <h2>Where</h2>
+        <p>Although Afghani food can be enjoyed anywhere, I love setting up my kitchen, which smells wonderful as spices combine beautifully.</p>
+        <p>Afghani restaurants around the world also provide a great platform to experience authentic dishes.</p>
+        <p>Whenever I cook, I transform my spaces into warm retreats that welcome friends and family.</p>
+    </section>
+    
+    <section id="how">
+        <h2>How</h2>
+        <p>Cooking Afghani cuisine involves a blend of spices like cumin, coriander, and saffron.</p>
+        <p>Each plate tells a story, using traditional methods and family recipes that have been passed down for generations.</p>
+        <p>I like to involve family members in my cooking, making it a fun and collaborative process!</p>
+    </section>
+    
+    <section id="why">
+        <h2>Why</h2>
+        <p>Cooking Afghani food is not only a way to connect with my heritage but also a lens through which to celebrate community.</p>
+        <p>Sharing food fosters connections and creates lasting memories, which is why I cherish it so much.</p>
+        <p>Cooking allows me to express my creativity and share my culture with others.</p>
+    </section>
+    
+    <footer>
+        <p>
+            <a href="https://validator.w3.org/check?uri=referer">Validate HTML</a> | 
+            <a href="https://jigsaw.w3.org/css-validator/check/referer">Validate CSS</a> | 
+            <a href="https://wave.webaim.org/">Accessibility Check</a>
+        </p>
+        <p>Design by Your Name</p>
+    </footer>
+    
+    <script>
+        function showSection(sectionId) {
+            const sections = document.querySelectorAll('section');
+            sections.forEach(section => {
+                section.classList.remove('active');
+            });
+            document.getElementById(sectionId).classList.add('active');
+        }
+    </script>
+</body>
+</html>

@@ -5,57 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cooking Afghani Foods</title>
     <link rel="icon" href="favicon.ico" type="image/x-icon">
-    <style>
-        body {
-            background-color: #fcf8e3; /* Light beige background */
-            font-family: 'Arial', sans-serif; /* Clear font */
-        }
-        header {
-            background-color: #b19554; /* Warm brown color */
-            color: white;
-            padding: 20px;
-            text-align: center;
-        }
-        footer {
-            background-color: #333; /* Dark footer */
-            color: white;
-            text-align: center;
-            padding: 15px;
-        }
-        nav a {
-            margin: 15px;
-            color: #f0e68c; /* Light yellow links */
-            text-decoration: none; /* No underline */
-        }
-        nav a:hover {
-            text-decoration: underline; /* Underline on hover */
-        }
-        section {
-            display: none; /* Hide all sections initially */
-            padding: 20px;
-            margin: 20px;
-            border-radius: 8px;
-            background-color: #fff; /* White sections */
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        }
-        .active {
-            display: block; /* Show active section */
-        }
-    </style>
+    <link rel="stylesheet" href="styles/default.css"> 
 </head>
 <body>
     <header>
         <h1>Cooking Afghani Foods</h1>
-        <nav>
-            <a href="#" onclick="showSection('about')">Who</a>
-            <a href="#" onclick="showSection('home')">What</a>
-            <a href="#" onclick="showSection('when')">When</a>
-            <a href="#" onclick="showSection('where')">Where</a>
-            <a href="#" onclick="showSection('how')">How</a>
-            <a href="#" onclick="showSection('why')">Why</a>
-        </nav>
     </header>
     
+    <nav>
+        <a href="#" onclick="showSection('about')">Who</a>
+        <a href="#" onclick="showSection('home')">What</a>
+        <a href="#" onclick="showSection('when')">When</a>
+        <a href="#" onclick="showSection('where')">Where</a>
+        <a href="#" onclick="showSection('how')">How</a>
+        <a href="#" onclick="showSection('why')">Why</a>
+    </nav>
+
     <section id="home" class="active">
         <h2>What (Home)</h2>
         <p>Welcome to my space dedicated to Afghani cooking! Discover the rich flavors and traditions of Afghan cuisine.</p>
@@ -74,7 +39,6 @@
         <p>I'm passionate about cooking and love sharing the vibrant flavors of Afghani cuisine with everyone. 
             My journey began in my family kitchen, where I learned the secrets of traditional recipes.</p>
         <p>Cooking is more than just a hobby for me—it's a way to celebrate culture and tradition.</p>
-    
         <p>When I'm not cooking, I'm often scoring events, mixing my love for food and community.</p>
     </section>
     

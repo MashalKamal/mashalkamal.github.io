@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Introduction Form</title>
+    <link rel="stylesheet" href="styles/default.css">
+</head>
+<body>
+
+<header id="components/header"></header>
+
+<main>
+    <h2 id="page-title">Introduction Form</h2>
+    <h3>Please submit the form below.</h3>
+
+    <form id="form">
+
+        <!-- Names -->
+        <input type="text" id="firstName" value="Mashal" required>
+        <input type="text" id="middleName" placeholder="Middle Name">
+        <input type="text" id="nickname" placeholder="Nickname">
+        <input type="text" id="lastName" value="Gharzai" required>
+
+        <!-- Mascot -->
+        <input type="text" id="mascotAdj" value="Curious" required>
+        <input type="text" id="mascotAnimal" value="Dog Lover" required>
+
+        <!-- Divider -->
+        <input type="text" id="divider" value="~">
+
+        <!-- Image -->
+        <input type="file" id="imageInput">
+        <input type="text" id="imageCaption" placeholder="Image Caption">
+
+        <!-- Personal Statements -->
+        <textarea id="personalStatement">I love coding and want to pursue data science.</textarea>
+        <textarea id="personalBackground">I enjoy learning new technologies and building projects.</textarea>
+        <textarea id="academicBackground">Currently taking ITIS 3135, ITIS 2128, MATH 171, and MATH 172.</textarea>
+
+        <!-- Courses -->
+        <div id="courses"></div>
+        <button type="button" id="addCourse">Add Course</button>
+
+        <!-- Links -->
+        <input type="text" id="github" placeholder="GitHub Link">
+        <input type="text" id="linkedin" placeholder="LinkedIn Link">
+
+        <br><br>
+
+        <!-- Buttons -->
+        <button type="submit">Submit</button>
+        <button type="reset">Reset</button>
+        <button type="button" id="clearBtn">Clear</button>
+        <button type="button" id="generateHTML">Generate HTML</button>
+        <button type="button" id="generateJSON">Generate JSON</button>
+
+    </form>
+
+    <section id="output"></section>
+</main>
+
+<footer id="footer"></footer>
+
+<!-- Scripts -->
+<script src="scripts/introduction.js"></script>
+<script src="scripts/generate_html.js"></script>
+<script src="scripts/generate_json.js"></script>
+
+
+<!-- Load header/footer -->
+<script>
+fetch("components/header.html")
+  .then(res => res.text())
+  .then(data => document.getElementById("header").innerHTML = data);
+
+fetch("components/footer.html")
+  .then(res => res.text())
+  .then(data => document.getElementById("footer").innerHTML = data);
+</script>
+
+</body>
+</html>

@@ -1,15 +1,22 @@
-document.getElementById("generateHTML").addEventListener("click", () => {
-    const first = document.getElementById("firstName").value;
-    const last = document.getElementById("lastName").value;
+document.getElementById("generate-html").addEventListener("click", () => {
 
-    document.getElementById("form").style.display = "none";
-    document.getElementById("page-title").innerText = "Introduction HTML";
+  const output = document.getElementById("output-area");
 
-    document.getElementById("output").innerHTML = `
-<pre><code>
-&lt;h2&gt;Introduction HTML&lt;/h2&gt;
-&lt;h3&gt;${first} ${last}&lt;/h3&gt;
-&lt;!-- Add more structured HTML here as in your intro page --&gt;
-</code></pre>
-    `;
+  // build HTML (use your existing html variable if already created)
+  const html = `
+<h2>Introduction HTML</h2>
+<h3>${firstName.value} ${divider.value} ${mascotAdj.value} ${mascotAnimal.value}</h3>
+
+<figure>
+  <img src="${document.getElementById("current-img").src}" width="200">
+  <figcaption>${imageCaption.value}</figcaption>
+</figure>
+
+<p>${personalStatement.value}</p>
+`;
+
+  output.innerHTML += `
+    <h3>Generated HTML Code</h3>
+    <pre><code>${html.replace(/</g,"&lt;").replace(/>/g,"&gt;")}</code></pre>
+  `;
 });

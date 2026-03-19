@@ -1,81 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Introduction Form</title>
-    <link rel="stylesheet" href="styles/default.css">
+  <title>Introduction Form</title>
+  <link rel="stylesheet" href="styles/default.css">
 </head>
+
 <body>
 
-<header id="components/header"></header>
+<h2 id="page-h2">Introduction Form</h2>
+<h3>Please submit the form below.</h3>
 
-<main>
-    <h2 id="page-title">Introduction Form</h2>
-    <h3>Please submit the form below.</h3>
+<form id="intro-form" novalidate>
 
-    <form id="form">
+  <label>First Name</label>
+  <input id="firstName" required value="Mashal">
 
-        <!-- Names -->
-        <input type="text" id="firstName" value="Mashal" required>
-        <input type="text" id="middleName" placeholder="Middle Name">
-        <input type="text" id="nickname" placeholder="Nickname">
-        <input type="text" id="lastName" value="Gharzai" required>
+  <label>Last Name</label>
+  <input id="lastName" required value="Gharzai">
 
-        <!-- Mascot -->
-        <input type="text" id="mascotAdj" value="Curious" required>
-        <input type="text" id="mascotAnimal" value="Dog Lover" required>
+  <label>Mascot Adjective</label>
+  <input id="mascotAdj" required value="Curious">
 
-        <!-- Divider -->
-        <input type="text" id="divider" value="~">
+  <label>Mascot Animal</label>
+  <input id="mascotAnimal" required value="Falcon">
 
-        <!-- Image -->
-        <input type="file" id="imageInput">
-        <input type="text" id="imageCaption" placeholder="Image Caption">
+  <label>Divider</label>
+  <input id="divider" value="~" required>
 
-        <!-- Personal Statements -->
-        <textarea id="personalStatement">I love coding and want to pursue data science.</textarea>
-        <textarea id="personalBackground">I enjoy learning new technologies and building projects.</textarea>
-        <textarea id="academicBackground">Currently taking ITIS 3135, ITIS 2128, MATH 171, and MATH 172.</textarea>
+  <label>Image</label>
+  <input type="file" id="imageFile">
 
-        <!-- Courses -->
-        <div id="courses"></div>
-        <button type="button" id="addCourse">Add Course</button>
+  <img id="current-img" 
+       src="https://img.freepik.com/premium-vector/cute-girl-study-with-computer-vector-illustration-white_835895-6032.jpg"
+       width="200">
 
-        <!-- Links -->
-        <input type="text" id="github" placeholder="GitHub Link">
-        <input type="text" id="linkedin" placeholder="LinkedIn Link">
+  <label>Caption</label>
+  <input id="imageCaption" value="Studying on computer">
 
-        <br><br>
+  <label>Personal Statement</label>
+  <textarea id="personalStatement">I am from Afghanistan and studying IT.</textarea>
 
-        <!-- Buttons -->
-        <button type="submit">Submit</button>
-        <button type="reset">Reset</button>
-        <button type="button" id="clearBtn">Clear</button>
-        <button type="button" id="generateHTML">Generate HTML</button>
-        <button type="button" id="generateJSON">Generate JSON</button>
+  <h3>Bullets</h3>
+  <div id="bullets">
+    <input name="bullet1" value="Personal Background: From Afghanistan.">
+    <input name="bullet2" value="Academic Background: IT degree.">
+    <input name="bullet3" value="Transferred to UNCC.">
+    <input name="bullet4" value="Subject Background: IT.">
+    <input name="bullet5" value="Primary Computer: Laptop.">
+    <input name="bullet6" value="Hobbies: Reading.">
+    <input name="bullet7" value="Goals: Graduate.">
+  </div>
 
-    </form>
+  <h3>Courses</h3>
+  <div id="courses"></div>
+  <button type="button" id="add-course">Add Course</button>
 
-    <section id="output"></section>
-</main>
+  <label>Quote</label>
+  <input id="quote" value="Learning never stops.">
 
-<footer id="footer"></footer>
+  <label>Author</label>
+  <input id="quoteAuthor" value="Unknown">
 
-<!-- Scripts -->
+  <br><br>
+  <button type="submit">Submit</button>
+  <button type="reset">Reset</button>
+  <button type="button" id="clear-btn">Clear</button>
+  <button type="button" id="generate-html">Generate HTML</button>
+  <button type="button" id="generate-json">Generate JSON</button>
+
+</form>
+
+<div id="output-area"></div>
+
 <script src="scripts/introduction.js"></script>
-<script src="scripts/generate_html.js"></script>
-<script src="scripts/generate_json.js"></script>
-
-
-<!-- Load header/footer -->
-<script>
-fetch("components/header.html")
-  .then(res => res.text())
-  .then(data => document.getElementById("header").innerHTML = data);
-
-fetch("components/footer.html")
-  .then(res => res.text())
-  .then(data => document.getElementById("footer").innerHTML = data);
-</script>
 
 </body>
 </html>

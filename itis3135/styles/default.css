@@ -32,8 +32,8 @@ nav ul {
 }
 
 nav ul li {
-    display: inline;
-    margin-right: 15px;
+    display: block;      /* Stack links vertically */
+    margin-bottom: 10px; /* Space between links */
 }
 
 nav ul li a {

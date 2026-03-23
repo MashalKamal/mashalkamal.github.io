@@ -1,20 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome Page</title>
-  <link rel="stylesheet" href="style/default.css"> 
-  <script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
+    <title>Welcome to Afghan Brand Mango Gorilla Survey</title>
+    <link rel="stylesheet" href="styles/default.css"> 
+     <script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <div data-include="components/header.html"></div>
-      <li><a href="../index.html">Go Back Home</a></li>
 
-    <nav>
-        <h2>It is My Itis-3135-Gallery File.  !</h2>
-    </nav>
-    <div data-include=" components/footer.html"></div>
+    <!-- Header Include -->
+    <div data-include="components/header.html"></div>
+
+    <!-- Navigation / Go Back Home -->
+    <ul>
+        <li><a href="../index.html">Go Back Home</a></li>
+    </ul>
+
+    <!-- Main Content -->
+    <main>
+        <h2>Welcome to the Mango Gorilla Survey!</h2>
+        <p>We’d love your feedback about Mango Gorilla, our mascot for your project!</p>
+
+        <!-- Survey Section -->
+        <section id="mango-gorilla-survey">
+            <h3>Mango Gorilla Survey</h3>
+            <form action="#" method="post">
+                <!-- Favorite Feature -->
+                <label for="favorite-feature">What is your favorite feature of Mango Gorilla?</label><br>
+                <select id="favorite-feature" name="favorite-feature">
+                    <option value="strength">Strength</option>
+                    <option value="playfulness">Playfulness</option>
+                    <option value="color">Color</option>
+                    <option value="intelligence">Intelligence</option>
+                </select><br><br>
+
+                <!-- Rating -->
+                <label>How would you rate Mango Gorilla?</label><br>
+                <input type="radio" id="excellent" name="rating" value="excellent">
+                <label for="excellent">Excellent</label><br>
+                <input type="radio" id="good" name="rating" value="good">
+                <label for="good">Good</label><br>
+                <input type="radio" id="average" name="rating" value="average">
+                <label for="average">Average</label><br>
+                <input type="radio" id="poor" name="rating" value="poor">
+                <label for="poor">Poor</label><br><br>
+
+                <!-- Suggestions -->
+                <label for="suggestions">Any suggestions for Mango Gorilla?</label><br>
+                <textarea id="suggestions" name="suggestions" rows="4" cols="50" placeholder="Your feedback..."></textarea><br><br>
+
+                <button type="submit">Submit</button>
+            </form>
+        </section>
+    </main>
+
+    <!-- Footer Include -->
+    <div data-include="components/footer.html"></div>
+
+    <!-- HTML Include Script -->
     <script src="scripts/HTMLInclude.min.js"></script>
 </body>
 </html>

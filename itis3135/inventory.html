@@ -1,29 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <title> Welcome </title>
+    <title>Welcome to Inventory Page </title>
     <link rel="stylesheet" href="styles/default.css"> 
      <script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
 </head>
+
 <body>
 
-    <!-- Header Include -->
-    <div data-include="components/header.html"></div>
+  <!-- Header Include -->
+  <div data-include="components/header.html"></div>
 
-    <!-- Go Back Home Link -->
-    <ul>
-        <li><a href="../index.html">Go Back Home</a></li>
-    </ul>
+  <!-- Main Content -->
+  <h1>Book Inventory</h1>
 
-    <!-- Main Content -->
-    <nav>
-        <h2>Welcome to My Itis-3135 Inventory File!</h2>
-    </nav>
+  <table>
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Author</th>
+        <th>Category</th>
+        <th>Status</th>
+        <th>Rate</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="read">
+        <td>AAAA</td>
+        <td>AAAA</td>
+        <td>AAAA</td>
+        <td><span class="status">Read</span></td>
+        <td>
+          <span class="rate three">
+            <span></span>
+            <span></span>
+            <span></span>
+          </span>
+        </td>
+      </tr>
+      <tr class="read">
+        <td>BBB</td>
+        <td>BBB</td>
+        <td>BBB</td>
+        <td><span class="status">Read</span></td>
+        <td>
+          <span class="rate two">
+            <span></span>
+            <span></span>
+            <span></span>
+          </span>
+        </td>
+      </tr>
+      <tr class="in-progress">
+        <td>CCC</td>
+        <td>CCC</td>
+        <td>CCC</td>
+        <td><span class="status">In Progress</span></td>
+        <td>
+          <span class="rate">
+            <span></span>
+            <span></span>
+            <span></span>
+          </span>
+        </td>
+      </tr>
+      <tr class="to-read">
+        <td>DDD</td>
+        <td>DDD</td>
+        <td>DDD</td>
+        <td><span class="status">To Read</span></td>
+        <td>
+          <span class="rate">
+            <span></span>
+            <span></span>
+            <span></span>    
+          </span>
+        </td>
+      </tr>
+    </tbody>
+  </table>
 
-    <!-- Footer Include -->
-    <div data-include="components/footer.html"></div>
+  <!-- Footer Include -->
+  <div data-include="components/footer.html"></div>
 
-    <!-- Script to include header and footer -->
-    <script src="scripts/HTMLInclude.min.js"></script>
+  <!-- Script for including header/footer -->
+  <script src="scripts/HTMLInclude.min.js"></script>
 </body>
+
 </html>

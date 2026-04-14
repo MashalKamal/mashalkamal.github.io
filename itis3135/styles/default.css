@@ -6,7 +6,7 @@
 
 body {
     font-family: 'Comic Sans MS', cursive, sans-serif;
-    background-color: #ffe4e1;
+    background-color: #e6f2ff;  /* light blue */
     color: #2c1957;
     max-width: 900px;
     margin: 0 auto;
@@ -14,7 +14,7 @@ body {
 
 /* Header Styles */
 header {
-    background: #ff99cc;
+    background: #f5d7cf;
     color: #3f5cbc;
     text-align: center;
     padding: 30px;
@@ -33,19 +33,19 @@ nav ul {
 }
 
 nav ul li {
-    display: inline;   /* ✅ removes extra spacing */
+    display: inline;
 }
 
 nav ul li a {
-    color: black;      /* ✅ text is now black */
+    color: black;
     font-weight: bold;
     text-decoration: none;
 }
 
-/* Add | separators without extra spacing */
+/* Add | separators */
 nav ul li::after {
     content: "|";
-    margin: 0 5px;     /* small clean spacing */
+    margin: 0 5px;
 }
 
 nav ul li:last-child::after {
@@ -58,7 +58,32 @@ nav ul li a:hover {
 
 /* Main Content Styles */
 main {
+    padding: 20px 0;   /* ✅ FIX: aligns image with header/footer */
+}
+
+/* Image Styling */
+img {
+    max-width: 250px;
+    float: left;
+    margin: -10px 20px 20px 0;  /* 🔥 negative top margin pulls it up */
+    border-radius: 10px;
+}
+
+/* Page Title styled like header */
+.page-title {
+    background: #ff99cc;
+    color: #3f5cbc;
+    text-align: center;
     padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+/* Clear float */
+main::after {
+    content: "";
+    display: block;
+    clear: both;
 }
 
 /* Knowledge Section Styles */

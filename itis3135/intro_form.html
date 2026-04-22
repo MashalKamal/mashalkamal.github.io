@@ -7,61 +7,114 @@
 
 <body>
 
+<!-- NAVBAR (keep consistent with header JS if required by instructor) -->
+<nav>
+  <a href="index.html">Home</a>
+</nav>
+
 <h2 id="page-h2">Introduction Form</h2>
 <h3>Please submit the form below.</h3>
 
 <form id="intro-form" novalidate>
 
+  <!-- PERSONAL INFO -->
   <label>First Name</label>
-  <input id="firstName" required value="Mashal">
+  <input id="firstName" value="Mashal" placeholder="First Name" required>
+
+  <label>Middle Name</label>
+  <input id="middleName" value="" placeholder="Middle (optional)">
+
+  <label>Nickname</label>
+  <input id="nickname" value="" placeholder="Nickname (optional)">
 
   <label>Last Name</label>
-  <input id="lastName" required value="Gharzai">
+  <input id="lastName" value="Gharzai" placeholder="Last Name" required>
 
+  <!-- ACKNOWLEDGMENT -->
+  <label>Acknowledgment Statement</label>
+  <input id="ackStatement" value="I understand the academic honesty policy" placeholder="Statement" required>
+
+  <label>Acknowledgment Date</label>
+  <input id="ackDate" type="date" required>
+
+  <!-- MASCOT -->
   <label>Mascot Adjective</label>
-  <input id="mascotAdj" required value="Curious">
+  <input id="mascotAdj" value="Curious" required>
 
   <label>Mascot Animal</label>
-  <input id="mascotAnimal" required value="Falcon">
+  <input id="mascotAnimal" value="Falcon" required>
 
   <label>Divider</label>
   <input id="divider" value="~" required>
 
-  <label>Image</label>
+  <!-- IMAGE -->
+  <label>Picture</label>
   <input type="file" id="imageFile">
 
-  <img id="current-img" 
+  <img id="current-img"
        src="https://img.freepik.com/premium-vector/cute-girl-study-with-computer-vector-illustration-white_835895-6032.jpg"
        width="200">
 
-  <label>Caption</label>
+  <label>Picture Caption</label>
   <input id="imageCaption" value="Studying on computer">
 
+  <!-- TEXT -->
   <label>Personal Statement</label>
   <textarea id="personalStatement">I am from Afghanistan and studying IT.</textarea>
 
-  <h3>Bullets</h3>
+  <!-- BULLETS -->
+  <h3>7 Main Bullets</h3>
   <div id="bullets">
-    <input name="bullet1" value="Personal Background: From Afghanistan.">
-    <input name="bullet2" value="Academic Background: IT degree.">
-    <input name="bullet3" value="Transferred to UNCC.">
-    <input name="bullet4" value="Subject Background: IT.">
-    <input name="bullet5" value="Primary Computer: Laptop.">
-    <input name="bullet6" value="Hobbies: Reading.">
-    <input name="bullet7" value="Goals: Graduate.">
+    <input value="Personal Background: From Afghanistan.">
+    <input value="Academic Background: IT degree.">
+    <input value="Transferred to UNCC.">
+    <input value="Subject Background: IT.">
+    <input value="Primary Computer: Laptop.">
+    <input value="Hobbies: Reading.">
+    <input value="Goals: Graduate.">
   </div>
 
+  <!-- COURSES -->
   <h3>Courses</h3>
-  <div id="courses"></div>
+  <div id="courses">
+    <div class="course">
+      <input value="ITIS">
+      <input value="3135">
+      <input value="Web App Design">
+      <input value="Required course for degree">
+      <button type="button" onclick="this.parentElement.remove()">Delete</button>
+    </div>
+  </div>
+
   <button type="button" id="add-course">Add Course</button>
 
+  <!-- QUOTE -->
   <label>Quote</label>
   <input id="quote" value="Learning never stops.">
 
-  <label>Author</label>
-  <input id="quoteAuthor" value=" Mashal">
+  <label>Quote Author</label>
+  <input id="quoteAuthor" value="Mashal">
+
+  <!-- OPTIONAL -->
+  <label>Funny Thing</label>
+  <input id="funnyThing" placeholder="Optional">
+
+  <label>Something I want to share</label>
+  <input id="shareSomething" placeholder="Optional">
+
+  <!-- LINKS -->
+  <h3>Links</h3>
+<div id="links">
+  <input placeholder="LinkedIn">
+  <input placeholder="GitHub">
+  <input placeholder="Portfolio">
+  <input placeholder="Instagram">
+  <input placeholder="Other">
+</div>
 
   <br><br>
+
+  <!-- BUTTONS -->
   <button type="submit">Submit</button>
   <button type="reset">Reset</button>
   <button type="button" id="clear-btn">Clear</button>
@@ -73,6 +126,8 @@
 <div id="output-area"></div>
 
 <script src="scripts/introduction.js"></script>
+<script src="scripts/generate_html.js"></script>
+<script src="scripts/generate_json.js"></script>
 
 </body>
 </html>

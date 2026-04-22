@@ -4,24 +4,25 @@
     box-sizing: border-box;
 }
 
+/* BODY */
 body {
     font-family: 'Comic Sans MS', cursive, sans-serif;
-    background-color: #e6f2ff;  /* light blue */
-    color: #2c1957;
+    background-color: rgb(222, 195, 167);
+    color: rgb(21, 109, 53);
     max-width: 900px;
     margin: 0 auto;
 }
 
-/* Header Styles */
+/* HEADER */
 header {
-    background: #f5d7cf;
-    color: #3f5cbc;
     text-align: center;
-    padding: 30px;
+    padding: 20px 0;
+    background: rgb(179, 106, 54);
+    color: rgb(228, 235, 231);
     border-radius: 10px;
 }
 
-/* Navigation Styles */
+/* NAV */
 nav {
     margin: 20px 0;
 }
@@ -37,12 +38,11 @@ nav ul li {
 }
 
 nav ul li a {
-    color: black;
+    color: rgb(7, 113, 70);
     font-weight: bold;
     text-decoration: none;
 }
 
-/* Add | separators */
 nav ul li::after {
     content: "|";
     margin: 0 5px;
@@ -53,52 +53,67 @@ nav ul li:last-child::after {
 }
 
 nav ul li a:hover {
-    color: #a9c919;
+    color: rgb(9, 96, 9);
 }
 
-/* Main Content Styles */
+/* MAIN */
 main {
-    padding: 20px 0;   /* ✅ FIX: aligns image with header/footer */
+    padding: 20px 0;
 }
 
-/* Image Styling */
+/* IMAGE */
 img {
     max-width: 250px;
     float: left;
-    margin: -10px 20px 20px 0;  /* 🔥 negative top margin pulls it up */
+    margin: -10px 20px 20px 0;
     border-radius: 10px;
 }
 
-/* Page Title styled like header */
+/* TITLE */
 .page-title {
-    background: #ff99cc;
-    color: #3f5cbc;
+    background: #8be4f4;
+    color: white;
     text-align: center;
     padding: 20px;
     border-radius: 10px;
     margin-bottom: 20px;
 }
 
-/* Clear float */
+/* CLEAR */
 main::after {
     content: "";
     display: block;
     clear: both;
 }
 
-/* Knowledge Section Styles */
+/* SECTION */
 .knowledge-section {
     background-color: #fff0f5;
     padding: 15px;
     border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 10px rgba(42, 91, 44, 0.114);
 }
 
-/* Footer Styles */
+/* FOOTER (ONLY FIXED PART) */
 footer {
     text-align: center;
     padding: 20px 0;
-    background: #ff99cc;
-    color: white;
+    background: rgb(179, 106, 54);
     border-radius: 10px;
+}
+
+/* FIX: make ALL footer text + links match header color */
+footer,
+footer a,
+footer a:visited {
+    color: rgb(228, 235, 231);
+}
+
+/* optional clean links */
+footer a {
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
 }

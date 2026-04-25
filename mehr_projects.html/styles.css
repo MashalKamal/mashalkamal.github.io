@@ -44,7 +44,7 @@ h2 {
     margin-bottom: 30px;
 }
 
-/* LAYOUT (replaces .grid) */
+/* LAYOUT */
 .layout {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -64,12 +64,13 @@ h2 {
     transform: scale(1.05);
 }
 
-/* IMAGE (fixed size + fully visible) */
+/* IMAGE */
 .card img {
     width: 100%;
     height: 400px;
     object-fit: contain;
 }
+
 .card p {
     color: #c0392b;
     font-weight: bold;
@@ -92,4 +93,77 @@ footer {
     flex-direction: column;
     padding: 20px;
     background: #f5d7cf;
+}
+
+/* SLIDESHOW PAGE ONLY */
+.slideshow-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin-top: 40px;
+}
+
+.slideshow-page img {
+    width: 350px;
+    border-radius: 10px;
+}
+
+.slideshow-page button {
+    padding: 10px;
+    cursor: pointer;
+}
+
+/* =========================
+   INTRO FORM (ONLY PAGE AFFECTED)
+========================= */
+
+#intro-form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    align-items: center;
+}
+
+/* labels aligned */
+#intro-form label {
+    width: 180px;
+    font-weight: bold;
+}
+
+/* inputs */
+#intro-form input,
+#intro-form textarea {
+    width: 220px;
+    padding: 5px;
+}
+
+/* headings full width */
+#intro-form h3 {
+    width: 100%;
+}
+
+/* full width sections */
+#bullets,
+#courses,
+#links {
+    width: 100%;
+}
+
+/* course rows */
+.course {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 6px;
+}
+
+/* image spacing */
+#current-img {
+    margin-top: 10px;
+}
+
+/* output area */
+#output-area {
+    width: 100%;
+    margin-top: 20px;
 }

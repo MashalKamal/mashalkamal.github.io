@@ -1,49 +1,68 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mehr Shop</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
 
+<!-- Dynamic Header -->
+
 <div id="header"></div>
 
 <main>
 
+```
+<!-- Hero Section -->
 <section class="hero">
     <h1>Luxury Ethnic Wear</h1>
     <p>Discover elegance & style</p>
     <a href="gallery.html">Shop Now</a>
 </section>
-
+<img id="slide">
+<!-- Products Section -->
 <section class="products">
     <h2>You may also like</h2>
 
-    <div class="layout">  <!-- FIXED -->
+    <div class="layout">
+
 
         <div class="card">
             <img src="images/outfit1.jpg" alt="Bollywood Party Wear Salwar Kameez">
             <h3>Bollywood Party Wear Salwar Kameez</h3>
+            <button onclick="addToCart('Bollywood Party Wear Salwar Kameez')">
+                Add to Cart
+            </button>
         </div>
 
         <div class="card">
             <img src="images/outfit2.jpg" alt="Modest Eid Outfit Ideas">
             <h3>Modest Eid Outfit Ideas</h3>
+            <button onclick="addToCart('Modest Eid Outfit Ideas')">
+                Add to Cart
+            </button>
         </div>
 
         <div class="card">
-            <img src="images/outfit3.jpg" alt="Elegant Eid Outfit Inspirationt">
+            <img src="images/outfit3.jpg" alt="Elegant Eid Outfit Inspiration">
             <h3>Elegant Eid Outfit Inspiration</h3>
+            <button onclick="addToCart('Elegant Eid Outfit Inspiration')">
+                Add to Cart
+            </button>
         </div>
 
     </div>
 </section>
 
+<!-- Features Section -->
 <section class="products">
     <h2>Why Choose Mehr Shop?</h2>
 
-    <div class="layout">  <!-- FIXED -->
+    <div class="layout">
 
         <div class="card">
             <h3>High Quality</h3>
@@ -62,13 +81,17 @@
 
     </div>
 </section>
+```
 
 </main>
 
+<!-- Dynamic Footer -->
+
 <div id="footer"></div>
 
+<!-- JavaScript -->
+
 <script src="scripts/include.js"></script>
-<script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
 
 </body>
 </html>

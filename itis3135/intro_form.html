@@ -1,133 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <meta charset="UTF-8">
   <title>Introduction Form</title>
-  <link rel="stylesheet" href="styles/default.css">
+
+  <style>
+    body {
+      font-family: Arial;
+      background: #f4f4f4;
+      padding: 20px;
+    }
+
+    form {
+      max-width: 500px;
+      margin: auto;
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+    }
+
+    label {
+      display: block;
+      margin-top: 10px;
+      font-weight: bold;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+    }
+
+    button {
+      margin-top: 15px;
+      padding: 10px;
+    }
+
+    #output-area {
+      max-width: 500px;
+      margin: 20px auto;
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+    }
+  </style>
 </head>
 
 <body>
 
-<!-- NAVBAR (keep consistent with header JS if required by instructor) -->
-<nav>
-  <a href="index.html">Home</a>
-</nav>
+<h2>Introduction Form</h2>
 
-<h2 id="page-h2">Introduction Form</h2>
-<h3>Please submit the form below.</h3>
+<form id="intro-form">
 
-<form id="intro-form" novalidate>
-
-  <!-- PERSONAL INFO -->
   <label>First Name</label>
-  <input id="firstName" value="Mashal" placeholder="First Name" required>
-
-  <label>Middle Name</label>
-  <input id="middleName" value="" placeholder="Middle (optional)">
-
-  <label>Nickname</label>
-  <input id="nickname" value="" placeholder="Nickname (optional)">
+  <input id="firstName" required>
 
   <label>Last Name</label>
-  <input id="lastName" value="Gharzai" placeholder="Last Name" required>
+  <input id="lastName" required>
 
-  <!-- ACKNOWLEDGMENT -->
-  <label>Acknowledgment Statement</label>
-  <input id="ackStatement" value="I understand the academic honesty policy" placeholder="Statement" required>
+  <label>About You</label>
+  <textarea id="about"></textarea>
 
-  <label>Acknowledgment Date</label>
-  <input id="ackDate" type="date" required>
-
-  <!-- MASCOT -->
-  <label>Mascot Adjective</label>
-  <input id="mascotAdj" value="Curious" required>
-
-  <label>Mascot Animal</label>
-  <input id="mascotAnimal" value="Falcon" required>
-
-  <label>Divider</label>
-  <input id="divider" value="~" required>
-
-  <!-- IMAGE -->
-  <label>Picture</label>
-  <input type="file" id="imageFile">
-
-  <img id="current-img"
-       src="https://img.freepik.com/premium-vector/cute-girl-study-with-computer-vector-illustration-white_835895-6032.jpg"
-       width="200">
-
-  <label>Picture Caption</label>
-  <input id="imageCaption" value="Studying on computer">
-
-  <!-- TEXT -->
-  <label>Personal Statement</label>
-  <textarea id="personalStatement">I am from Afghanistan and studying IT.</textarea>
-
-  <!-- BULLETS -->
-  <h3>7 Main Bullets</h3>
-  <div id="bullets">
-    <input value="Personal Background: From Afghanistan.">
-    <input value="Academic Background: IT degree.">
-    <input value="Transferred to UNCC.">
-    <input value="Subject Background: IT.">
-    <input value="Primary Computer: Laptop.">
-    <input value="Hobbies: Reading.">
-    <input value="Goals: Graduate.">
-  </div>
-
-  <!-- COURSES -->
-  <h3>Courses</h3>
-  <div id="courses">
-    <div class="course">
-      <input value="ITIS">
-      <input value="3135">
-      <input value="Web App Design">
-      <input value="Required course for degree">
-      <button type="button" onclick="this.parentElement.remove()">Delete</button>
-    </div>
-  </div>
-
-  <button type="button" id="add-course">Add Course</button>
-
-  <!-- QUOTE -->
-  <label>Quote</label>
-  <input id="quote" value="Learning never stops.">
-
-  <label>Quote Author</label>
-  <input id="quoteAuthor" value="Mashal">
-
-  <!-- OPTIONAL -->
-  <label>Funny Thing</label>
-  <input id="funnyThing" placeholder="Optional">
-
-  <label>Something I want to share</label>
-  <input id="shareSomething" placeholder="Optional">
-
-  <!-- LINKS -->
-  <h3>Links</h3>
-<div id="links">
-  <input placeholder="LinkedIn">
-  <input placeholder="GitHub">
-  <input placeholder="Portfolio">
-  <input placeholder="Instagram">
-  <input placeholder="Other">
-</div>
-
-  <br><br>
-
-  <!-- BUTTONS -->
   <button type="submit">Submit</button>
-  <button type="reset">Reset</button>
-  <button type="button" id="clear-btn">Clear</button>
-  <button type="button" id="generate-html">Generate HTML</button>
-  <button type="button" id="generate-json">Generate JSON</button>
 
 </form>
 
 <div id="output-area"></div>
 
 <script src="scripts/introduction.js"></script>
-<script src="scripts/generate_html.js"></script>
-<script src="scripts/generate_json.js"></script>
 
 </body>
 </html>

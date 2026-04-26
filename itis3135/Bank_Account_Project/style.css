@@ -1,0 +1,46 @@
+body {
+  font-family: Arial, sans-serif;
+  background: rgb(179, 106, 54); /* your required background */
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Page title */
+h1 {
+  color: white;
+  margin-top: 30px;
+}
+
+/* Button styling */
+button {
+  background: #2c3e50;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+button:hover {
+  background: #1a252f;
+}
+
+/* Output box */
+#output {
+  margin-top: 20px;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  width: 60%;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+/* Text inside output */
+#output p {
+  font-size: 16px;
+  margin: 8px 0;
+}

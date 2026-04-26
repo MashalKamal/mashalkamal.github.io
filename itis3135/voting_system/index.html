@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Voting System</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<h1>Voting System</h1>
+
+<button onclick="handleAdd('Turkey')">Add Turkey</button>
+<button onclick="handleAdd('Morocco')">Add Morocco</button>
+<button onclick="handleAdd('Egypt')">Add Egypt</button>
+
+<br><br>
+
+<button onclick="handleVote('Turkey','user1')">Vote Turkey (user1)</button>
+<button onclick="handleVote('Turkey','user2')">Vote Turkey (user2)</button>
+<button onclick="handleVote('Morocco','user1')">Vote Morocco (user1)</button>
+
+<br><br>
+
+<button onclick="showResults()">Show Results</button>
+
+<h2>Output:</h2>
+<div id="output"></div>
+
+<script src="script.js"></script>
+</body>
+</html>

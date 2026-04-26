@@ -1,0 +1,32 @@
+body {
+  font-family: Arial, sans-serif;
+
+  /* REQUIRED COLOR */
+  background-color: rgb(179, 106, 54);
+
+  /* RAIN IMAGE */
+  background-image: url("https://images.unsplash.com/photo-1500674425229-f692875b0ab7");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  margin: 0;
+  padding: 20px;
+  text-align: center;
+  color: white;
+
+  /* DARK OVERLAY FOR READABILITY */
+  position: relative;
+}
+
+/* DARK LAYER OVER IMAGE */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.4);
+  z-index: -1;
+}

@@ -6,38 +6,93 @@
 
   <style>
     body {
-      font-family: Arial;
-      background: #f4f4f4;
+      font-family: Arial, sans-serif;
+      background: rgb(179, 106, 54);
       padding: 20px;
+    }
+
+    h2 {
+      text-align: center;
+      color: white;
     }
 
     form {
-      max-width: 500px;
+      max-width: 900px;
       margin: auto;
       background: white;
       padding: 20px;
-      border-radius: 10px;
+      border-radius: 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
     }
 
-    label {
-      display: block;
-      margin-top: 10px;
+    fieldset {
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      padding: 15px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    legend {
       font-weight: bold;
     }
 
-    input, textarea {
-      width: 100%;
+    .form-row {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .form-row label {
+      width: 220px;
+      font-weight: bold;
+      text-align: right;
+    }
+
+    .form-row input,
+    .form-row textarea {
+      flex: 1;
       padding: 8px;
-      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+
+    textarea {
+      min-height: 80px;
+      resize: vertical;
+    }
+
+    .preview-img {
+      width: 250px;
+      border-radius: 10px;
+      border: 1px solid #ccc;
+    }
+
+    .button-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
     }
 
     button {
-      margin-top: 15px;
-      padding: 10px;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 6px;
+      background: #2c3e50;
+      color: white;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #1a252f;
     }
 
     #output-area {
-      max-width: 500px;
+      max-width: 900px;
       margin: 20px auto;
       background: white;
       padding: 20px;
@@ -52,16 +107,151 @@
 
 <form id="intro-form">
 
-  <label>First Name</label>
-  <input id="firstName" required>
+<h3>Please submit the form below</h3>
 
-  <label>Last Name</label>
-  <input id="lastName" required>
+<!-- BASIC INFO -->
+<fieldset>
+  <legend>Basic Information</legend>
 
-  <label>About You</label>
-  <textarea id="about"></textarea>
+  <div class="form-row">
+    <label>First Name</label>
+    <input id="firstName" value="Mashal">
+  </div>
 
+  <div class="form-row">
+    <label>Middle Initial</label>
+    <input id="middle" value="">
+  </div>
+
+  <div class="form-row">
+    <label>Last Name</label>
+    <input id="lastName" value="Gharzai">
+  </div>
+
+  <div class="form-row">
+    <label>Preferred Name</label>
+    <input id="preferred" value="">
+  </div>
+
+  <div class="form-row">
+    <label>Divider</label>
+    <input id="divider" value="|">
+  </div>
+
+  <div class="form-row">
+    <label>Mascot Adjective</label>
+    <input id="mascotAdj" value="Mango">
+  </div>
+
+  <div class="form-row">
+    <label>Mascot Animal</label>
+    <input id="mascotAnimal" value="Gorilla">
+  </div>
+</fieldset>
+
+<!-- ACKNOWLEDGMENT -->
+<fieldset>
+  <legend>Acknowledgment</legend>
+
+  <div class="form-row">
+    <label>Statement</label>
+    <input id="ackStatement" value="I understand that this information is public">
+  </div>
+
+  <div class="form-row">
+    <label>Date</label>
+    <input id="ackDate" type="date" value="2026-01-17">
+  </div>
+</fieldset>
+
+<!-- IMAGE -->
+<fieldset>
+  <legend>Image</legend>
+
+  <input type="file" id="imageFile">
+
+  <img
+    id="current-img"
+    src="https://media.npr.org/assets/img/2014/09/17/cookies_wide-48e0dca1f32bddd02ae698a8298e47ada9dc6768.jpg"
+    alt="Cookies at Christmas"
+    class="preview-img"
+  >
+
+  <div class="form-row">
+    <label>Caption</label>
+    <input id="imageCaption" value="My cookies at Christmas">
+  </div>
+</fieldset>
+
+<!-- PERSONAL STATEMENT -->
+<fieldset>
+  <legend>Personal Statement</legend>
+
+  <div class="form-row">
+    <label>Statement</label>
+    <textarea id="personalStatement">
+I’m currently studying Computer Science at UNC Charlotte, focusing on Software Engineering and Web/Mobile App Development.
+    </textarea>
+  </div>
+</fieldset>
+
+<!-- BACKGROUND -->
+<fieldset>
+  <legend>Background</legend>
+
+  <div class="form-row"><label>Personal</label><input id="pb" value="I'm 20 years old, and when I'm not studying, I usually enjoy cooking at home."></div>
+  <div class="form-row"><label>Professional</label><input id="prof" value="I’m interning in the IT department at CPCC."></div>
+  <div class="form-row"><label>Academic</label><input id="acad" value="I graduated from CPCC and I’m now a junior."></div>
+  <div class="form-row"><label>Subject</label><input id="subj" value="This is my first web development class."></div>
+  <div class="form-row"><label>Computer</label><input id="pc" value="2023 HP"></div>
+  <div class="form-row"><label>Backup</label><input id="backup" value="I back up my data every month."></div>
+
+  <div class="form-row"><label>Funny Thing</label><input id="funny" value="I’m scared of cats."></div>
+  <div class="form-row"><label>Share</label><input id="share" value="I moved to the USA in 2023."></div>
+</fieldset>
+
+<!-- COURSES -->
+<fieldset>
+  <legend>Courses</legend>
+
+  <div id="courses"></div>
+  <button type="button" id="add-course">+ Add Course</button>
+</fieldset>
+
+<!-- QUOTE -->
+<fieldset>
+  <legend>Quote</legend>
+
+  <div class="form-row">
+    <label>Quote</label>
+    <input id="quote" value="Every sunrise is a reminder that you have another chance to be better">
+  </div>
+
+  <div class="form-row">
+    <label>Author</label>
+    <input id="quoteAuthor" value="">
+  </div>
+</fieldset>
+
+<!-- LINKS -->
+<fieldset>
+  <legend>Links</legend>
+
+  <div class="form-row"><label>GitHub</label><input id="link1" value="https://github.com/yourname"></div>
+  <div class="form-row"><label>GitHub Pages</label><input id="link2" value="https://yourname.github.io"></div>
+  <div class="form-row"><label>freeCodeCamp</label><input id="link3" value="https://www.freecodecamp.org/yourname"></div>
+  <div class="form-row"><label>Codecademy</label><input id="link4" value="https://www.codecademy.com/profiles/yourname"></div>
+  <div class="form-row"><label>LinkedIn</label><input id="link5" value="https://www.linkedin.com/in/yourname"></div>
+</fieldset>
+
+<!-- BUTTONS -->
+<div class="button-group">
   <button type="submit">Submit</button>
+  <button type="reset">Reset</button>
+  <button type="button" id="clear-btn">Clear</button>
+  <button type="button" id="generate-html">Generate HTML</button>
+  <button type="button" id="generate-json">Generate JSON</button>
+</div>
 
 </form>
 

@@ -1,8 +1,4 @@
-document.addEventListener("DOMContentLoaded", function () {
-
-  let currentIndex = 0;
-
-  const images = [
+const images = [
     "images/outfit1.jpg",
     "images/outfit2.jpg",
     "images/outfit3.jpg",
@@ -13,30 +9,29 @@ document.addEventListener("DOMContentLoaded", function () {
     "images/outfit8.png",
     "images/Sitemap.PNG",
     "images/Wireframe.PNG"
-  ];
+];
 
-  const slide = document.getElementById("slide");
-  const nextBtn = document.getElementById("nextBtn");
-  const prevBtn = document.getElementById("prevBtn");
+let index = 0;
 
-  function showSlide() {
-    slide.src = images[currentIndex];
-  }
+function showSlide() {
+    document.getElementById("slide").src = images[index];
+}
 
-  nextBtn.addEventListener("click", function () {
-    currentIndex = (currentIndex + 1) % images.length;
+function nextSlide() {
+    index = (index + 1) % images.length;
     showSlide();
-  });
+}
 
-  prevBtn.addEventListener("click", function () {
-    currentIndex = (currentIndex - 1 + images.length) % images.length;
+function prevSlide() {
+    index = (index - 1 + images.length) % images.length;
     showSlide();
-  });
+}
 
-  // Auto play
-  setInterval(function () {
-    currentIndex = (currentIndex + 1) % images.length;
+// start slideshow properly
+document.addEventListener("DOMContentLoaded", function () {
     showSlide();
-  }, 3000);
 
+    setInterval(() => {
+        nextSlide();
+    }, 3000);
 });

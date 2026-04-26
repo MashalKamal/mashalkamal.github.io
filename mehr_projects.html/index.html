@@ -28,7 +28,7 @@
     <a href="gallery.html">Shop Now</a>
 </section>
 
-<!-- FEATURES ONLY (kept your structure) -->
+<!-- FEATURES SECTION -->
 <section class="products">
     <h2>Why Choose Mehr Shop?</h2>
 
@@ -56,8 +56,24 @@
 
 <div id="footer"></div>
 
+<!-- ========================= -->
+<!-- YOUR EXISTING SCRIPTS -->
+<!-- ========================= -->
 <script src="scripts/include.js"></script>
 <script src="scripts/slideshow.js"></script>
+
+<!-- ========================= -->
+<!-- CART SYSTEM (ONLY ADDITION) -->
+<!-- ========================= -->
+<script src="scripts/scripts.js"></script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    if (typeof updateCartCount === "function") {
+        updateCartCount();
+    }
+});
+</script>
 
 </body>
 </html>

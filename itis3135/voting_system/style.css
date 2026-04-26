@@ -1,0 +1,59 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* BODY */
+body {
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    background-color: rgb(222, 195, 167);
+    color: rgb(21, 109, 53);
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* HEADER STYLE (for title) */
+h1 {
+    background: rgb(179, 106, 54);
+    color: rgb(228, 235, 231);
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px 0;
+}
+
+/* BUTTONS */
+button {
+    background: rgb(139, 228, 244);
+    color: rgb(21, 109, 53);
+    border: none;
+    padding: 10px 15px;
+    margin: 8px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.2s ease;
+}
+
+button:hover {
+    background: rgb(179, 106, 54);
+    color: rgb(228, 235, 231);
+}
+
+/* OUTPUT BOX */
+#output {
+    margin-top: 20px;
+    background-color: #fff0f5;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(42, 91, 44, 0.114);
+    min-height: 80px;
+    white-space: pre-line;
+}
+
+/* HR styling */
+hr {
+    margin: 20px 0;
+    border: 1px solid rgb(179, 106, 54);
+}

@@ -1,3 +1,7 @@
+* {
+    box-sizing: border-box;
+}
+
 body {
     margin: 0;
     font-family: Georgia, serif;
@@ -34,7 +38,7 @@ h1 {
     font-size: 40px;
 }
 
-/* PRODUCTS */
+/* PRODUCTS SECTION */
 .products {
     padding: 40px;
 }
@@ -44,45 +48,61 @@ h2 {
     margin-bottom: 30px;
 }
 
-/* LAYOUT */
+/* FLEXBOX GALLERY */
 .layout {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 25px;
 }
 
-/* CARDS */
+/* CARD */
 .card {
     background: white;
+    flex: 0 0 300px;
+    border-radius: 15px;
     padding: 15px;
-    border-radius: 10px;
     text-align: center;
-    transition: transform 0.3s;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease;
 }
 
 .card:hover {
-    transform: scale(1.05);
+    transform: translateY(-5px);
 }
 
 /* IMAGE */
 .card img {
     width: 100%;
-    height: 400px;
-    object-fit: contain;
+    height: 380px;
+    object-fit: cover;
+    border-radius: 12px;
 }
 
-.card p {
-    color: #c0392b;
-    font-weight: bold;
+/* ✅ FIXED HEADING (NO WARNING) */
+.card-title {
+    margin-top: 12px;
+    font-size: 18px;
 }
 
 /* BUTTON */
-.hero button {
-    padding: 10px 20px;
-    border: none;
-    background: black;
-    color: white;
+.card button {
+    margin-top: 10px;
+    padding: 6px 12px;
+    border: 1px solid #aaa;
+    background: #f8f8f8;
     cursor: pointer;
+    border-radius: 5px;
+}
+
+.card button:hover {
+    background: #eaeaea;
+}
+
+/* PRICE */
+.card p {
+    color: #c0392b;
+    font-weight: bold;
 }
 
 /* FOOTER */
@@ -95,75 +115,27 @@ footer {
     background: #f5d7cf;
 }
 
-/* SLIDESHOW PAGE ONLY */
-.slideshow-page {
+/* SLIDESHOW */
+.hero-slideshow {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 20px;
-    margin-top: 40px;
+    gap: 15px;
+    margin: 20px 0;
 }
 
-.slideshow-page img {
+.hero-slideshow img {
     width: 350px;
-    border-radius: 10px;
+    height: 450px;
+    object-fit: cover;
+    border-radius: 12px;
 }
 
-.slideshow-page button {
+.hero-slideshow button {
     padding: 10px;
+    border: none;
+    background: black;
+    color: white;
     cursor: pointer;
-}
-
-/* =========================
-   INTRO FORM (ONLY PAGE AFFECTED)
-========================= */
-
-#intro-form {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
-    align-items: center;
-}
-
-/* labels aligned */
-#intro-form label {
-    width: 180px;
-    font-weight: bold;
-}
-
-/* inputs */
-#intro-form input,
-#intro-form textarea {
-    width: 220px;
-    padding: 5px;
-}
-
-/* headings full width */
-#intro-form h3 {
-    width: 100%;
-}
-
-/* full width sections */
-#bullets,
-#courses,
-#links {
-    width: 100%;
-}
-
-/* course rows */
-.course {
-    display: flex;
-    gap: 8px;
-    margin-bottom: 6px;
-}
-
-/* image spacing */
-#current-img {
-    margin-top: 10px;
-}
-
-/* output area */
-#output-area {
-    width: 100%;
-    margin-top: 20px;
+    border-radius: 5px;
 }

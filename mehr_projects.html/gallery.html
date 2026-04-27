@@ -21,71 +21,187 @@
 
     <div class="layout">
 
+        <!-- OUTFIT 1 -->
         <div class="card">
             <img src="images/outfit1.jpg" alt="indian salwar kameez">
             <h3>indian salwar kameez</h3>
-            <button onclick="addToCart('indian salwar kameez')">Add to Cart</button>
+
+            <select id="size-outfit1">
+                <option>XS</option><option>S</option><option>M</option>
+                <option>L</option><option>XL</option><option>XXL</option>
+            </select>
+
+            <div class="qty-controls">
+                <button onclick="changeTempQty('outfit1', -1)">-</button>
+                <span id="qty-outfit1">1</span>
+                <button onclick="changeTempQty('outfit1', 1)">+</button>
+            </div>
+
+            <button onclick="addToCartWithQty('indian salwar kameez', 140, 'images/outfit1.jpg', 'outfit1')">
+                Add to Cart
+            </button>
+
             <p>$140</p>
         </div>
 
+        <!-- OUTFIT 2 -->
         <div class="card">
             <img src="images/outfit2.jpg" alt="Lehenga">
-          <h3 class="card-title">Lehenga</h3>
-            <button onclick="addToCart('Lehenga')">Add to Cart</button>
+            <h3>Lehenga</h3>
+
+            <select id="size-outfit2">
+                <option>XS</option><option>S</option><option>M</option>
+                <option>L</option><option>XL</option><option>XXL</option>
+            </select>
+
+            <div class="qty-controls">
+                <button onclick="changeTempQty('outfit2', -1)">-</button>
+                <span id="qty-outfit2">1</span>
+                <button onclick="changeTempQty('outfit2', 1)">+</button>
+            </div>
+
+            <button onclick="addToCartWithQty('Lehenga', 150, 'images/outfit2.jpg', 'outfit2')">
+                Add to Cart
+            </button>
+
             <p>$150</p>
         </div>
 
+        <!-- OUTFIT 3 -->
         <div class="card">
             <img src="images/outfit3.jpg" alt="it's all about outfits">
             <h3>it's all about outfits</h3>
-            <button onclick="addToCart('it\'s all about outfits')">Add to Cart</button>
+
+            <select id="size-outfit3">
+                <option>XS</option><option>S</option><option>M</option>
+                <option>L</option><option>XL</option><option>XXL</option>
+            </select>
+
+            <div class="qty-controls">
+                <button onclick="changeTempQty('outfit3', -1)">-</button>
+                <span id="qty-outfit3">1</span>
+                <button onclick="changeTempQty('outfit3', 1)">+</button>
+            </div>
+
+            <button onclick="addToCartWithQty('it\'s all about outfits', 120, 'images/outfit3.jpg', 'outfit3')">
+                Add to Cart
+            </button>
+
             <p>$120</p>
         </div>
 
+        <!-- OUTFIT 4 -->
         <div class="card">
-            <img src="images/outfit4.jpg" alt="Royal Scarlet Anarkali Ensemble">
+            <img src="images/outfit4.jpg" alt="Royal Scarlet Anarkali">
             <h3>Royal Scarlet Anarkali Ensemble</h3>
-            <button onclick="addToCart('Royal Scarlet Anarkali Ensemble')">Add to Cart</button>
+
+            <select id="size-outfit4">
+                <option>XS</option><option>S</option><option>M</option>
+                <option>L</option><option>XL</option><option>XXL</option>
+            </select>
+
+            <div class="qty-controls">
+                <button onclick="changeTempQty('outfit4', -1)">-</button>
+                <span id="qty-outfit4">1</span>
+                <button onclick="changeTempQty('outfit4', 1)">+</button>
+            </div>
+
+            <button onclick="addToCartWithQty('Royal Scarlet Anarkali Ensemble', 110, 'images/outfit4.jpg', 'outfit4')">
+                Add to Cart
+            </button>
+
             <p>$110</p>
         </div>
 
+        <!-- OUTFIT 5 -->
         <div class="card">
-            <img src="images/outfit5.jpg" alt="Royal Maroon Anarkali Style Outfit">
+            <img src="images/outfit5.jpg" alt="Maroon Outfit">
             <h3>Royal Maroon Anarkali Style Outfit</h3>
-            <button onclick="addToCart('Royal Maroon Anarkali Style Outfit')">Add to Cart</button>
+
+            <select id="size-outfit5">
+                <option>XS</option><option>S</option><option>M</option>
+                <option>L</option><option>XL</option><option>XXL</option>
+            </select>
+
+            <div class="qty-controls">
+                <button onclick="changeTempQty('outfit5', -1)">-</button>
+                <span id="qty-outfit5">1</span>
+                <button onclick="changeTempQty('outfit5', 1)">+</button>
+            </div>
+
+            <button onclick="addToCartWithQty('Royal Maroon Anarkali Style Outfit', 140, 'images/outfit5.jpg', 'outfit5')">
+                Add to Cart
+            </button>
+
             <p>$140</p>
         </div>
 
+        <!-- OUTFIT 6 -->
         <div class="card">
-            <img src="images/outfit6.jpg" alt="Stunning Lavender Anarkali Suit">
+            <img src="images/outfit6.jpg" alt="Lavender Suit">
             <h3>Stunning Lavender Anarkali Suit</h3>
-            <button onclick="addToCart('Stunning Lavender Anarkali Suit')">Add to Cart</button>
+
+            <select id="size-outfit6">
+                <option>XS</option><option>S</option><option>M</option>
+                <option>L</option><option>XL</option><option>XXL</option>
+            </select>
+
+            <div class="qty-controls">
+                <button onclick="changeTempQty('outfit6', -1)">-</button>
+                <span id="qty-outfit6">1</span>
+                <button onclick="changeTempQty('outfit6', 1)">+</button>
+            </div>
+
+            <button onclick="addToCartWithQty('Stunning Lavender Anarkali Suit', 120, 'images/outfit6.jpg', 'outfit6')">
+                Add to Cart
+            </button>
+
             <p>$120</p>
         </div>
 
+        <!-- OUTFIT 7 -->
         <div class="card">
             <img src="images/outfit7.jpg" alt="Anarkali Suit">
             <h3>Anarkali Suit</h3>
-            <button onclick="addToCart('Anarkali Suit')">Add to Cart</button>
+
+            <select id="size-outfit7">
+                <option>XS</option><option>S</option><option>M</option>
+                <option>L</option><option>XL</option><option>XXL</option>
+            </select>
+
+            <div class="qty-controls">
+                <button onclick="changeTempQty('outfit7', -1)">-</button>
+                <span id="qty-outfit7">1</span>
+                <button onclick="changeTempQty('outfit7', 1)">+</button>
+            </div>
+
+            <button onclick="addToCartWithQty('Anarkali Suit', 130, 'images/outfit7.jpg', 'outfit7')">
+                Add to Cart
+            </button>
+
             <p>$130</p>
         </div>
 
+        <!-- OUTFIT 8 -->
         <div class="card">
-            <img src="images/outfit8.png" alt="STELLACOUTURE outfit">
+            <img src="images/outfit8.png" alt="Lehenga Outfit">
             <h3>Traditional Lehenga Style Outfit</h3>
-            <button onclick="addToCart('Traditional Lehenga Style Outfit')">Add to Cart</button>
-            <p>$140</p>
-        </div>
-        <div class="card">
-            <img src="images/Sitemap.PNG" alt="STELLACOUTURE outfit">
-            <h3>Traditional Lehenga Style Outfit</h3>
-            <button onclick="addToCart('Traditional Lehenga Style Outfit')">Add to Cart</button>
-            <p>$140</p>
-        </div>
-        <div class="card">
-            <img src="images/Wireframe.PNG" alt="STELLACOUTURE outfit">
-            <h3>Traditional Lehenga Style Outfit</h3>
-            <button onclick="addToCart('Traditional Lehenga Style Outfit')">Add to Cart</button>
+
+            <select id="size-outfit8">
+                <option>XS</option><option>S</option><option>M</option>
+                <option>L</option><option>XL</option><option>XXL</option>
+            </select>
+
+            <div class="qty-controls">
+                <button onclick="changeTempQty('outfit8', -1)">-</button>
+                <span id="qty-outfit8">1</span>
+                <button onclick="changeTempQty('outfit8', 1)">+</button>
+            </div>
+
+            <button onclick="addToCartWithQty('Traditional Lehenga Style Outfit', 140, 'images/outfit8.png', 'outfit8')">
+                Add to Cart
+            </button>
+
             <p>$140</p>
         </div>
 
@@ -97,7 +213,7 @@
 <div id="footer"></div>
 
 <script src="scripts/include.js"></script>
-<script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
+<script src="scripts/scripts.js"></script>
 
 </body>
 </html>

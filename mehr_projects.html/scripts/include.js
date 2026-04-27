@@ -10,8 +10,6 @@ function loadComponent(id, file) {
             var element = document.getElementById(id);
             if (element) {
                 element.innerHTML = data;
-            } else {
-                console.log("Element with ID '" + id + "' not found.");
             }
         })
         .catch(function(error) {
@@ -23,8 +21,3 @@ document.addEventListener("DOMContentLoaded", function () {
     loadComponent("header", "components/header.html");
     loadComponent("footer", "components/footer.html");
 });
-
-/* Add to Cart Function */
-function addToCart(item) {
-    alert(item + " added to cart!");
-}

@@ -1,23 +1,17 @@
-function loadComponent(id, file) {
-    fetch(file)
-        .then(function(response) {
-            if (!response.ok) {
-                throw new Error("File not found");
-            }
-            return response.text();
-        })
-        .then(function(data) {
-            var element = document.getElementById(id);
-            if (element) {
-                element.innerHTML = data;
-            }
-        })
-        .catch(function(error) {
-            console.log("Error loading component:", error);
-        });
-}
-
 document.addEventListener("DOMContentLoaded", function () {
-    loadComponent("header", "components/header.html");
-    loadComponent("footer", "components/footer.html");
+
+    fetch("./components/header.html")
+        .then(res => res.text())
+        .then(data => {
+            document.getElementById("header").innerHTML = data;
+        })
+        .catch(err => console.error("Header load error:", err));
+
+    fetch("./components/footer.html")
+        .then(res => res.text())
+        .then(data => {
+            document.getElementById("footer").innerHTML = data;
+        })
+        .catch(err => console.error("Footer load error:", err));
+
 });

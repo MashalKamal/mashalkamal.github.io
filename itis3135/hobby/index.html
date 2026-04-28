@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cooking Afghani Foods</title>
     <link rel="icon" href="favicon.ico" type="image/x-icon">
 
@@ -9,7 +11,6 @@
             margin: 0;
             font-family: "Segoe UI", Arial, sans-serif;
             color: #2d2d2d;
-
             background: url("images/food-background.jpg") no-repeat center center fixed;
             background-size: cover;
         }
@@ -19,24 +20,31 @@
             color: white;
             text-align: center;
             padding: 25px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+
+        header h1 {
+            margin-bottom: 10px;
+            font-size: 2.5em;
         }
 
         nav {
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
-            background: white;
+            background: rgba(255,255,255,0.95);
             border-bottom: 2px solid #ddd;
-            padding: 10px;
+            padding: 12px;
         }
 
         nav a {
-            margin: 8px 12px;
+            margin: 8px 10px;
             text-decoration: none;
             color: #3f7f72;
             font-weight: bold;
-            padding: 6px 10px;
-            border-radius: 6px;
+            padding: 8px 14px;
+            border-radius: 8px;
+            transition: 0.3s;
         }
 
         nav a:hover {
@@ -44,14 +52,23 @@
             color: white;
         }
 
+        nav a:not(:last-child)::after {
+            content: " ✦";
+            color: #c48b4f;
+        }
+
+        main {
+            padding-bottom: 30px;
+        }
+
         section {
             display: none;
-            max-width: 900px;
-            margin: 25px auto;
-            background: rgba(255, 255, 255, 0.92);
-            padding: 25px;
-            border-radius: 12px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            max-width: 950px;
+            margin: 30px auto;
+            background: rgba(255, 255, 255, 0.94);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.15);
         }
 
         section.active {
@@ -59,37 +76,57 @@
         }
 
         h2 {
-            border-left: 5px solid #5eab9b;
-            padding-left: 10px;
+            border-left: 6px solid #5eab9b;
+            padding-left: 12px;
             color: #3f7f72;
+            margin-bottom: 20px;
+        }
+
+        p {
+            line-height: 1.8;
+            margin-bottom: 18px;
+            font-size: 1.05em;
         }
 
         figure {
             text-align: center;
-            margin: 20px 0;
+            margin: 25px 0;
         }
 
         img {
             width: 100%;
-            max-width: 320px;
-            border-radius: 10px;
+            max-width: 340px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
         }
 
         figcaption {
-            font-size: 0.9em;
-            color: #666;
+            font-size: 0.95em;
+            color: #555;
+            margin-top: 8px;
+            font-weight: bold;
         }
 
-        p {
-            line-height: 1.6;
+        em {
+            color: #7a4d2b;
         }
 
         footer {
             text-align: center;
             background: #3f7f72;
             color: white;
-            padding: 20px;
+            padding: 25px;
             margin-top: 30px;
+        }
+
+        footer a {
+            color: white;
+            text-decoration: none;
+            margin: 0 8px;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
@@ -98,10 +135,9 @@
 
 <header>
     <h1>Cooking Afghani Foods</h1>
-    <p>A personal journey of Afghan home cooking</p>
+    <p>A personal journey of Afghan home cooking, family traditions, and cultural pride</p>
 </header>
 
-<!-- NAVIGATION -->
 <nav>
     <a href="#" onclick="showSection('intro')">Home</a>
     <a href="#" onclick="showSection('about')">Who</a>
@@ -110,36 +146,48 @@
     <a href="#" onclick="showSection('where')">Where</a>
     <a href="#" onclick="showSection('how')">How</a>
     <a href="#" onclick="showSection('why')">Why</a>
+    <a href="#" onclick="showSection('ai')">AI Prompts</a>
 </nav>
 
-<!-- INTRO -->
+<main>
+
+<!-- HOME / WHAT -->
 <section id="intro" class="active">
-    <h2>Afghan Cooking at Home</h2>
+    <h2>What Afghan Cooking Means to Me</h2>
 
     <p>
-        I love cooking Afghan food for my family and friends during my free time. Cooking is not just a hobby for me — it is part of who I am and where I come from.
+        Afghan cooking is more than preparing food — it is a meaningful part of my identity, culture, and family life.
+        I grew up in an Afghan household where the kitchen was always full of wonderful aromas, warm bread, and traditional meals.
+        Watching my mother and grandmother cook inspired me from a young age.
     </p>
 
     <p>
-        I grew up in an Afghan household where food was always being prepared. I learned by watching my family cook traditional meals like rice, kababs, and bread.
+        In my free time, I love cooking for my family and friends because food brings people together.
+        Afghan dishes like Kabuli Pulao, kababs, fresh naan, and sweet desserts are not only delicious,
+        but they also represent tradition, celebration, and love.
+    </p>
+
+    <p>
+        This hobby allows me to preserve my Afghan heritage while sharing it proudly with others.
+        Every meal I prepare reminds me of home, family gatherings, and the beauty of Afghan hospitality.
     </p>
 
     <figure>
         <img src="images/pic1.jpg" alt="Afghan home cooking">
-        <figcaption>Afghan home kitchen cooking atmosphere</figcaption>
-        <p><em>AI Prompt: Warm Afghan home kitchen cooking environment</em></p>
+        <figcaption>Traditional Afghan home kitchen cooking</figcaption>
+        <p><em>AI Prompt: Warm Afghan family kitchen with traditional cooking</em></p>
     </figure>
 
     <figure>
         <img src="images/family.jpg" alt="Family meal">
         <figcaption>Family meals shared together</figcaption>
-        <p><em>AI Prompt: Afghan family dining together at home</em></p>
+        <p><em>AI Prompt: Afghan family sharing dinner together</em></p>
     </figure>
 
     <figure>
-        <img src="images/rice.jpg" alt="Afghan rice dish">
-        <figcaption>Traditional Afghan rice dish</figcaption>
-        <p><em>AI Prompt: Afghan Kabuli Pulao rice with meat and raisins</em></p>
+        <img src="images/rice.jpg" alt="Kabuli Pulao">
+        <figcaption>Kabuli Pulao, one of Afghanistan’s most famous dishes</figcaption>
+        <p><em>AI Prompt: Afghan Kabuli Pulao rice with lamb, carrots, and raisins</em></p>
     </figure>
 </section>
 
@@ -148,29 +196,35 @@
     <h2>Who I Am</h2>
 
     <p>
-        I am an Afghan student who enjoys cooking traditional food for my family and friends. Cooking is one of the ways I stay connected to my culture.
+        I am an Afghan student who has always loved cooking traditional Afghan food.
+        My passion comes from growing up surrounded by family members who taught me recipes, cooking methods, and the meaning behind each dish.
     </p>
 
     <p>
-        I learned cooking from my family, and it has always been part of my life growing up in an Afghan home.
+        Cooking helps me stay connected to my roots and reminds me of my childhood.
+        It is one of the ways I express creativity while honoring my culture.
+    </p>
+
+    <p>
+        Whether I am making tea, rice, kababs, or sweets, cooking makes me feel proud of where I come from.
     </p>
 
     <figure>
-        <img src="images/pic4.jpg" alt="Cooking food">
-        <figcaption>Preparing Afghan food</figcaption>
-        <p><em>AI Prompt: Afghan person cooking traditional food</em></p>
+        <img src="images/pic4.jpg" alt="Cooking Afghan food">
+        <figcaption>Preparing Afghan meals with care</figcaption>
+        <p><em>AI Prompt: Afghan cook preparing traditional meal</em></p>
     </figure>
 
     <figure>
         <img src="images/family2.jpg" alt="Family cooking">
-        <figcaption>Cooking together as a family</figcaption>
+        <figcaption>Family cooking traditions passed down</figcaption>
         <p><em>AI Prompt: Afghan family cooking together</em></p>
     </figure>
 
     <figure>
         <img src="images/pic19.jpg" alt="Tea time">
-        <figcaption>Family tea time</figcaption>
-        <p><em>AI Prompt: Afghan family drinking tea together</em></p>
+        <figcaption>Tea and conversation are part of Afghan culture</figcaption>
+        <p><em>AI Prompt: Afghan family enjoying tea together</em></p>
     </figure>
 </section>
 
@@ -179,29 +233,35 @@
     <h2>What I Cook</h2>
 
     <p>
-        I cook Afghan dishes like Kabuli Pulao, kababs, sweets, and traditional drinks.
+        I enjoy preparing many Afghan dishes, from savory meals to desserts and drinks.
+        My favorites include Kabuli Pulao, grilled kababs, fresh salads, yogurt drinks, and Afghan sweets.
     </p>
 
     <p>
-        These foods are very important in Afghan culture and are usually shared during family meals and celebrations.
+        Afghan cuisine uses flavorful spices, rice, meats, vegetables, and homemade bread.
+        Each dish carries tradition and is often prepared for sharing.
+    </p>
+
+    <p>
+        Cooking these meals allows me to practice cultural traditions while improving my cooking skills.
     </p>
 
     <figure>
         <img src="images/rice.jpg" alt="Rice dish">
         <figcaption>Kabuli Pulao</figcaption>
-        <p><em>AI Prompt: Afghan rice dish with meat and raisins</em></p>
+        <p><em>AI Prompt: Afghan rice dish with raisins and lamb</em></p>
     </figure>
 
     <figure>
         <img src="images/pic12.jpg" alt="Kabab">
-        <figcaption>Grilled kabab</figcaption>
-        <p><em>AI Prompt: Afghan kabab grilled over charcoal</em></p>
+        <figcaption>Grilled Afghan kababs</figcaption>
+        <p><em>AI Prompt: Afghan kabab on charcoal grill</em></p>
     </figure>
 
     <figure>
-        <img src="images/pic15.jpg" alt="Sweet dish">
+        <img src="images/pic15.jpg" alt="Dessert">
         <figcaption>Traditional Afghan dessert</figcaption>
-        <p><em>AI Prompt: Afghan Halwa dessert dish</em></p>
+        <p><em>AI Prompt: Afghan sweet dessert plate</em></p>
     </figure>
 </section>
 
@@ -210,29 +270,33 @@
     <h2>When I Cook</h2>
 
     <p>
-        I usually cook in my free time, especially on weekends or when guests come over.
+        I usually cook during weekends, holidays, or whenever I have free time.
     </p>
 
     <p>
-        Cooking becomes more special during holidays, celebrations, and family gatherings.
+        Afghan cooking becomes especially meaningful during celebrations, Ramadan, Eid, and family gatherings.
+    </p>
+
+    <p>
+        Special meals often bring everyone together and create unforgettable memories.
     </p>
 
     <figure>
         <img src="images/pic13.jpg" alt="Drink">
-        <figcaption>Traditional Afghan drink</figcaption>
-        <p><em>AI Prompt: Afghan yogurt drink served cold</em></p>
+        <figcaption>Refreshing Afghan yogurt drink</figcaption>
+        <p><em>AI Prompt: Traditional Afghan yogurt drink</em></p>
     </figure>
 
     <figure>
         <img src="images/pic5.jpg" alt="Dinner">
-        <figcaption>Family dinner time</figcaption>
-        <p><em>AI Prompt: Afghan family eating dinner together</em></p>
+        <figcaption>Family dinner celebrations</figcaption>
+        <p><em>AI Prompt: Afghan family dinner celebration</em></p>
     </figure>
 
     <figure>
         <img src="images/pic14.jpg" alt="Salad">
         <figcaption>Fresh Afghan salad</figcaption>
-        <p><em>AI Prompt: Afghan fresh salad dish</em></p>
+        <p><em>AI Prompt: Afghan salad with vegetables</em></p>
     </figure>
 </section>
 
@@ -241,29 +305,33 @@
     <h2>Where I Cook</h2>
 
     <p>
-        I cook at home in my kitchen where I feel comfortable and connected to my culture.
+        My favorite place to cook is at home, where I feel connected to family traditions.
     </p>
 
     <p>
-        Afghan food is made everywhere, but home cooking is the most meaningful to me.
+        Home kitchens are often the heart of Afghan culture, where recipes are shared across generations.
+    </p>
+
+    <p>
+        Cooking at home creates comfort, tradition, and happiness.
     </p>
 
     <figure>
         <img src="images/pic6.jpg" alt="Kitchen">
-        <figcaption>Home kitchen cooking space</figcaption>
-        <p><em>AI Prompt: Afghan home kitchen cooking scene</em></p>
+        <figcaption>Afghan home kitchen</figcaption>
+        <p><em>AI Prompt: Afghan kitchen cooking scene</em></p>
     </figure>
 
     <figure>
         <img src="images/pic7.jpg" alt="Meal">
-        <figcaption>Home cooked meal</figcaption>
-        <p><em>AI Prompt: Traditional Afghan meal prepared at home</em></p>
+        <figcaption>Fresh home-cooked Afghan meal</figcaption>
+        <p><em>AI Prompt: Afghan meal prepared at home</em></p>
     </figure>
 
     <figure>
-        <img src="images/pic16.jpg" alt="Tea cooking">
-        <figcaption>Tea during cooking</figcaption>
-        <p><em>AI Prompt: Afghan tea served during cooking time</em></p>
+        <img src="images/pic16.jpg" alt="Tea">
+        <figcaption>Tea while cooking</figcaption>
+        <p><em>AI Prompt: Afghan tea in kitchen</em></p>
     </figure>
 </section>
 
@@ -272,29 +340,33 @@
     <h2>How I Cook</h2>
 
     <p>
-        I cook using traditional Afghan methods passed down in my family.
+        I cook using traditional family recipes and methods I learned growing up.
     </p>
 
     <p>
-        This includes grilling meat, cooking rice, and using spices for flavor.
+        This includes grilling meats, carefully seasoning rice, making tea, and preparing desserts.
+    </p>
+
+    <p>
+        Afghan cooking often requires patience, detail, and love.
     </p>
 
     <figure>
-        <img src="images/pic8.jpg" alt="Grill">
+        <img src="images/pic8.jpg" alt="Grilling">
         <figcaption>Grilling kababs</figcaption>
-        <p><em>AI Prompt: Afghan kabab grilling over fire</em></p>
+        <p><em>AI Prompt: Afghan kabab grilling</em></p>
     </figure>
 
     <figure>
-        <img src="images/pic9.jpg" alt="Rice">
-        <figcaption>Cooking rice</figcaption>
-        <p><em>AI Prompt: Afghan saffron rice cooking pot</em></p>
+        <img src="images/pic9.jpg" alt="Rice cooking">
+        <figcaption>Cooking saffron rice</figcaption>
+        <p><em>AI Prompt: Afghan saffron rice cooking</em></p>
     </figure>
 
     <figure>
-        <img src="images/pic17.jpg" alt="Sweet">
+        <img src="images/pic17.jpg" alt="Desserts">
         <figcaption>Traditional sweets</figcaption>
-        <p><em>AI Prompt: Afghan saffron dessert sweets</em></p>
+        <p><em>AI Prompt: Afghan sweets preparation</em></p>
     </figure>
 </section>
 
@@ -303,44 +375,72 @@
     <h2>Why I Cook</h2>
 
     <p>
-        I cook Afghan food because it connects me to my culture, family history, and childhood memories.
+        I cook because it connects me to my Afghan heritage and reminds me of my family.
     </p>
 
     <p>
-        In Afghan culture, food is a way of showing love, respect, and hospitality to others.
+        Food is one of the strongest expressions of Afghan hospitality, generosity, and love.
     </p>
 
     <p>
-        Cooking also makes me happy because I love sharing food with my family and friends and seeing them enjoy it.
+        Sharing meals with family and friends brings me joy and allows me to preserve my traditions.
     </p>
 
     <figure>
         <img src="images/pic10.jpg" alt="Family meal">
-        <figcaption>Family meal tradition</figcaption>
-        <p><em>AI Prompt: Afghan family sharing meal together</em></p>
+        <figcaption>Family meal traditions</figcaption>
+        <p><em>AI Prompt: Afghan family meal</em></p>
     </figure>
 
     <figure>
         <img src="images/pic11.jpg" alt="Guests">
-        <figcaption>Hospitality tradition</figcaption>
-        <p><em>AI Prompt: Afghan hospitality serving food to guests</em></p>
+        <figcaption>Serving guests with hospitality</figcaption>
+        <p><em>AI Prompt: Afghan hospitality food serving</em></p>
     </figure>
 
     <figure>
         <img src="images/pic18.jpg" alt="Tea hospitality">
-        <figcaption>Serving tea to guests</figcaption>
-        <p><em>AI Prompt: Afghan hospitality serving tea</em></p>
+        <figcaption>Tea as a symbol of welcome</figcaption>
+        <p><em>AI Prompt: Afghan tea hospitality</em></p>
     </figure>
 </section>
 
+<!-- AI PROMPTS -->
+<section id="ai">
+    <h2>AI Prompts Used</h2>
+
+    <p><strong>AI Model Used:</strong> ChatGPT</p>
+
+    <p>
+        I used AI to help improve my website writing, structure, styling ideas, and image prompts.
+    </p>
+
+    <p>
+        Example prompts included:
+        “Create a professional Afghan food blog website,”
+        “Write cultural descriptions for Afghan cooking,”
+        and “Generate Afghan food image prompts.”
+    </p>
+</section>
+
+</main>
+
 <footer>
-    <p>Designed by Mashal Gharzai | Afghan Food Blog</p>
+    <p>Designed by <a href="../designfirm.com/index.html">Mashal Gharzai | Afghan Food Blog</a></p>
+
+    <p>
+        <a href="https://validator.w3.org/">HTML Validation</a> |
+        <a href="https://jigsaw.w3.org/css-validator/">CSS Validation</a> |
+        <a href="https://wave.webaim.org/">Accessibility Validation</a>
+    </p>
 </footer>
 
 <script>
 function showSection(id) {
-    const sections = document.querySelectorAll("section");
-    sections.forEach(s => s.classList.remove("active"));
+    const sections = document.querySelectorAll("main section");
+    sections.forEach(section => {
+        section.classList.remove("active");
+    });
     document.getElementById(id).classList.add("active");
 }
 </script>

@@ -1,4 +1,4 @@
-* {
+* { 
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -61,7 +61,7 @@ main {
     padding: 20px 0;
 }
 
-/* IMAGE */
+/* IMAGE (general pages) */
 img {
     max-width: 250px;
     float: left;
@@ -94,7 +94,7 @@ main::after {
     box-shadow: 0 4px 10px rgba(42, 91, 44, 0.114);
 }
 
-/* FOOTER (ONLY FIXED PART) */
+/* FOOTER */
 footer {
     text-align: center;
     padding: 20px 0;
@@ -102,18 +102,35 @@ footer {
     border-radius: 10px;
 }
 
-/* FIX: make ALL footer text + links match header color */
+/* FOOTER COLORS FIX */
 footer,
 footer a,
 footer a:visited {
     color: rgb(228, 235, 231);
 }
 
-/* optional clean links */
 footer a {
     text-decoration: none;
 }
 
 footer a:hover {
     text-decoration: underline;
+}
+
+/* ========================== */
+/* PEER REVIEW FIGURE (ADDED FIX) */
+/* ========================== */
+
+.peer-figure {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.peer-figure img {
+    width: 550px;   /* bigger image */
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    display: block;
+    margin: 0 auto;
 }

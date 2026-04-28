@@ -1,95 +1,54 @@
-let cart = JSON.parse(localStorage.getItem("cart")) || [];
+let cart = JSON.parse(localStorage.getItem("cart")) || {};
 
-// TEMP QUANTITY STORAGE
-let tempQty = {
-    outfit1: 1,
-    outfit2: 1,
-    outfit3: 1,
-    outfit4: 1,
-    outfit5: 1,
-    outfit6: 1,
-    outfit7: 1,
-    outfit8: 1
-};
+// update qty
+function changeQty(id, change) {
+    let span = document.getElementById("qty-" + id);
+    let value = parseInt(span.innerText);
 
-// SAVE
-function saveCart() {
-    localStorage.setItem("cart", JSON.stringify(cart));
+    value += change;
+    if (value < 0) value = 0;
+
+    span.innerText = value;
 }
 
-// COUNT
-function updateCartCount() {
-    let count = document.getElementById("cart-count");
-    if (count) {
-        count.innerText = cart.reduce((sum, item) => sum + item.quantity, 0);
+// add to cart
+function addToCart(name, price, image, id) {
+
+    let qty = parseInt(document.getElementById("qty-" + id).innerText);
+    let size = document.getElementById("size-" + id).value;
+
+    if (qty === 0) {
+        alert("Select quantity first!");
+        return;
     }
-}
 
-// CHANGE QTY IN GALLERY
-function changeTempQty(id, change) {
-    tempQty[id] += change;
-    if (tempQty[id] < 1) tempQty[id] = 1;
-    document.getElementById("qty-" + id).innerText = tempQty[id];
-}
+    let key = name + "-" + size;
 
-// ADD TO CART WITH QTY
-function addToCartWithQty(name, price, image, id) {
-
-    let qty = tempQty[id];
-
-    let existing = cart.find((item) => item.name === name);
-
-    if (existing) {
-        existing.quantity += qty;
+    if (cart[key]) {
+        cart[key].quantity += qty;
     } else {
-        cart.push({
+        cart[key] = {
             name,
             price,
             image,
+            size,
             quantity: qty
-        });
+        };
     }
 
-    tempQty[id] = 1;
-    document.getElementById("qty-" + id).innerText = 1;
+    document.getElementById("qty-" + id).innerText = 0;
 
-    saveCart();
-    updateCartCount();
+    localStorage.setItem("cart", JSON.stringify(cart));
+
+    alert("Added to cart ✔");
 }
 
-// SHOW CART
-function showCart() {
-
-    let output = "";
-    let total = 0;
-
-    for (let i = 0; i < cart.length; i++) {
-
-        let item = cart[i];
-
-        output += `
-            <div class="cart-item">
-                <img src="${item.image}">
-                <h3>${item.name}</h3>
-                <p>$${item.price}</p>
-                <p>Qty: ${item.quantity}</p>
-                <p>Total: $${item.price * item.quantity}</p>
-            </div>
-        `;
-
-        total += item.price * item.quantity;
-    }
-
-    document.getElementById("cart-items").innerHTML =
-        output || "<p>No items in cart</p>";
-
-    document.getElementById("total").innerText = total;
+// image zoom
+function openImage(src) {
+    document.getElementById("image-modal").style.display = "flex";
+    document.getElementById("modal-img").src = src;
 }
 
-// INIT
-window.onload = function () {
-    updateCartCount();
-    if (document.getElementById("cart-items")) {
-        showCart();
-    }
-};
+function closeImage() {
+    document.getElementById("image-modal").style.display = "none";
+}

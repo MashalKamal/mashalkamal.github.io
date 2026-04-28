@@ -38,7 +38,7 @@ nav ul li {
 }
 
 nav ul li a {
-    color: rgb(7, 113, 70);
+    color: rgb(242, 247, 245);
     font-weight: bold;
     text-decoration: none;
 }
@@ -63,7 +63,9 @@ main {
 
 /* IMAGE (general pages) */
 img {
+    display: block;
     max-width: 250px;
+    margin: 0 auto;
     float: left;
     margin: -10px 20px 20px 0;
     border-radius: 10px;
@@ -77,6 +79,15 @@ img {
     padding: 20px;
     border-radius: 10px;
     margin-bottom: 20px;
+}
+
+main ul li a {
+    color: green;
+    text-decoration: none;
+}
+
+main ul li a:hover {
+    text-decoration: underline;
 }
 
 /* CLEAR */
@@ -118,7 +129,7 @@ footer a:hover {
 }
 
 /* ========================== */
-/* PEER REVIEW FIGURE (ADDED FIX) */
+/* PEER REVIEW FIGURE */
 /* ========================== */
 
 .peer-figure {
@@ -127,10 +138,44 @@ footer a:hover {
 }
 
 .peer-figure img {
-    width: 550px;   /* bigger image */
+    width: 550px;
     max-width: 100%;
     height: auto;
     border-radius: 10px;
     display: block;
     margin: 0 auto;
+}
+
+/* ========================== */
+/* HOME NAV BOX STYLE */
+/* ========================== */
+
+.home-nav {
+    text-align: center;
+    background: rgb(179, 106, 54);
+    padding: 15px;
+    border-radius: 10px;
+    margin: 20px 0;
+}
+
+.home-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.home-nav ul li {
+    display: inline;
+    margin: 0 10px;
+}
+
+.home-nav ul li a {
+    color: rgb(242, 247, 245);
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.home-nav ul li a:hover {
+    color: rgb(9, 96, 9);
+    text-decoration: underline;
 }

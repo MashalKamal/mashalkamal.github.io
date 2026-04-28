@@ -1,4 +1,4 @@
-\<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <title>Shopping Cart - Mehr Shop</title>
@@ -7,7 +7,6 @@
 
 <body>
 
-<!-- HEADER -->
 <div id="header"></div>
 
 <main>
@@ -21,33 +20,35 @@
 
     <h2>Cart Items</h2>
 
-    <!-- Items will be displayed here -->
     <div id="cart-items">
         <p>No items in cart yet.</p>
     </div>
 
-    <h3>Total Price: $<span id="total">0</span></h3>
+    <div class="cart-total">
+        <h3>Total Price: $<span id="total">0</span></h3>
+    </div>
 
-    <button onclick="clearCart()">Clear Cart</button>
+    <div class="cart-actions">
+        <button onclick="clearCart()">Clear Cart</button>
+    </div>
 
 </section>
 
 </main>
 
-<!-- FOOTER -->
+<!-- IMAGE ZOOM MODAL -->
+<div id="image-modal" class="image-modal" onclick="closeImage()">
+    <img id="modal-img">
+</div>
+
+<div id="image-modal" class="image-modal" onclick="closeImage()">
+    <img id="modal-img">
+</div>
+
 <div id="footer"></div>
 
-<!-- SCRIPTS -->
 <script src="scripts/include.js"></script>
 <script src="scripts/scripts.js"></script>
-
-<!-- AUTO LOAD CART -->
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-    showCart();
-    updateCartCount();
-});
-</script>
 
 </body>
 </html>

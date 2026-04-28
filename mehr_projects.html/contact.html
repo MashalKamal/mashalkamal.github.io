@@ -11,44 +11,51 @@
 
 <main>
 
+<!-- HERO -->
 <section class="hero">
     <h1>Contact Us</h1>
+    <p>Give feedback and help us improve — and get rewarded!</p>
 </section>
 
 <section class="products">
     <div class="layout">
 
-        <!-- Contact Info -->
+        <!-- CONTACT INFO -->
         <div class="card">
             <h3>Contact Information</h3>
             <p>Email: <a href="mailto:Mehr21@gmail.com">Mehr21@gmail.com</a></p>
             <p>Phone: (123) 456-7890</p>
         </div>
 
-        <!-- Feedback Form -->
+        <!-- FEEDBACK FORM -->
         <div class="card">
-            <h3>Send Feedback</h3>
+            <h3>Give Feedback</h3>
+            <p>Share your experience with Mehr Shop. Your opinion matters!</p>
 
-            <form onsubmit="return submitForm()">
+            <form onsubmit="return submitForm(event)">
 
                 <label for="name">Name:</label><br>
-                <input type="text" id="name" name="name" required>
+                <input type="text" id="name" required>
                 <br><br>
 
-                <label for="message">Message:</label><br>
-                <textarea id="message" name="message" rows="4" required></textarea>
+                <label for="message">Your Feedback:</label><br>
+                <textarea id="message" rows="4" required></textarea>
                 <br><br>
 
-                <button type="submit">Submit</button>
+                <button type="submit">Send Feedback</button>
 
             </form>
         </div>
 
-        <!-- Extra Info (keeps layout balanced) -->
+        <!-- REWARDS SECTION -->
         <div class="card">
-            <h3>Support</h3>
-            <p>We usually respond within 24 hours.</p>
-            <p>Thank you for contacting Mehr Shop!</p>
+            <h3>Get Rewards 🎁</h3>
+            <p>
+                Leave feedback and receive exclusive discount codes for your next order!
+            </p>
+            <p>
+                Loyal customers may also receive special offers and early access to new collections.
+            </p>
         </div>
 
     </div>
@@ -59,7 +66,7 @@
 <div id="footer"></div>
 
 <script src="scripts/include.js"></script>
-<script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
+<script src="scripts/scripts.js"></script>
 
 </body>
 </html>

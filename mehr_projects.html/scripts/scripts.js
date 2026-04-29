@@ -1,4 +1,4 @@
-let cart = JSON.parse(localStorage.getItem("cart")) || [];
+var cart = JSON.parse(localStorage.getItem("cart")) || [];
 
 // ==========================
 // SAVE CART
@@ -11,28 +11,59 @@ function saveCart() {
 // CART COUNT
 // ==========================
 function updateCartCount() {
-    let count = document.getElementById("cart-count");
+    var count = document.getElementById("cart-count");
 
-    if (count) {
-        let totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
-        count.innerText = totalItems > 0 ? totalItems : "";
-    }
+    if (!count) return;
+
+    var totalItems = cart.reduce(function (sum, item) {
+        return sum + item.quantity;
+    }, 0);
+
+    count.innerText = totalItems;
 }
 
 // ==========================
-// ADD TO CART (GALLERY)
+// MESSAGE
+// ==========================
+function showMessage(text) {
+    var msg = document.createElement("div");
+    msg.className = "added-msg";
+    msg.innerText = text;
+
+    document.body.appendChild(msg);
+
+    setTimeout(function () {
+        msg.remove();
+    }, 2000);
+}
+
+// ==========================
+// FIND EXISTING ITEM (SAFE VERSION)
+// ==========================
+function findItem(name, size) {
+    var i;
+
+    for (i = 0; i < cart.length; i++) {
+        if (cart[i].name === name && cart[i].size === size) {
+            return cart[i];
+        }
+    }
+
+    return null;
+}
+
+// ==========================
+// ADD TO CART
 // ==========================
 function addToCart(name, price, image, id) {
 
-    let sizeSelect = document.getElementById("size-" + id);
-    let size = sizeSelect ? sizeSelect.value : "N/A";
+    var sizeElement = document.getElementById("size-" + id);
+    var size = sizeElement ? sizeElement.value : "M";
 
-    let existing = cart.find(
-        item => item.name === name && item.size === size
-    );
+    var existing = findItem(name, size);
 
     if (existing) {
-        existing.quantity += 1;
+        existing.quantity = existing.quantity + 1;
     } else {
         cart.push({
             name: name,
@@ -49,75 +80,44 @@ function addToCart(name, price, image, id) {
 }
 
 // ==========================
-// SHOW CART PAGE
+// SHOW CART
 // ==========================
 function showCart() {
 
-    let output = "";
-    let total = 0;
+    var container = document.getElementById("cart-items");
+    if (!container) return;
 
-    for (let i = 0; i < cart.length; i++) {
+    var output = "";
+    var total = 0;
 
-        let item = cart[i];
+    var i;
 
-        output += `
-        <div class="cart-item">
+    for (i = 0; i < cart.length; i++) {
 
-            <div class="cart-row">
+        output =
+            output +
+            '<div class="cart-item">' +
+                '<div class="cart-row">' +
+                    '<img src="' + cart[i].image + '" alt="' + cart[i].name + '" onclick="openImage(\'' + cart[i].image + '\')">' +
+                    '<div class="cart-info">' +
+                        '<h3>' + cart[i].name + '</h3>' +
+                        '<p>Size: ' + cart[i].size + '</p>' +
+                        '<p>$' + cart[i].price + '</p>' +
+                        '<p>Qty: ' + cart[i].quantity + '</p>' +
+                        '<p>Total: $' + (cart[i].price * cart[i].quantity) + '</p>' +
+                    '</div>' +
+                '</div>' +
+            '</div>';
 
-                <img src="${item.image}" onclick="openImage('${item.image}')">
-
-                <div class="cart-info">
-
-                    <h3>${item.name}</h3>
-                    <p>Size: ${item.size}</p>
-
-                    <p class="price">$${item.price}</p>
-
-                    <div class="qty-controls">
-                        <button onclick="decreaseQty(${i})">-</button>
-                        <span>${item.quantity}</span>
-                        <button onclick="increaseQty(${i})">+</button>
-                    </div>
-
-                    <p>Total: $${item.price * item.quantity}</p>
-
-                </div>
-
-            </div>
-
-        </div>
-        `;
-
-        total += item.price * item.quantity;
+        total = total + (cart[i].price * cart[i].quantity);
     }
 
-    document.getElementById("cart-items").innerHTML =
-        output || "<p>No items in cart</p>";
+    container.innerHTML = output || "<p>No items in cart</p>";
 
-    document.getElementById("total").innerText = total;
-}
-
-// ==========================
-// QTY CONTROLS (CART PAGE)
-// ==========================
-function increaseQty(i) {
-    cart[i].quantity++;
-    saveCart();
-    showCart();
-    updateCartCount();
-}
-
-function decreaseQty(i) {
-    cart[i].quantity--;
-
-    if (cart[i].quantity <= 0) {
-        cart.splice(i, 1);
+    var totalBox = document.getElementById("total");
+    if (totalBox) {
+        totalBox.innerText = total;
     }
-
-    saveCart();
-    showCart();
-    updateCartCount();
 }
 
 // ==========================
@@ -131,7 +131,7 @@ function clearCart() {
 }
 
 // ==========================
-// PAY NOW BUTTON
+// CHECKOUT
 // ==========================
 function payNow() {
     if (cart.length === 0) {
@@ -139,44 +139,32 @@ function payNow() {
         return;
     }
 
-    let total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
+    var total = cart.reduce(function (sum, item) {
+        return sum + item.price * item.quantity;
+    }, 0);
 
-    alert("Payment Successful!\nTotal Paid: $" + total);
-
-    cart = [];
-    saveCart();
-    showCart();
-    updateCartCount();
+    localStorage.setItem("checkoutTotal", total);
+    window.location.href = "checkout.html";
 }
 
 // ==========================
-// IMAGE ZOOM
+// IMAGE MODAL
 // ==========================
 function openImage(src) {
-    let modal = document.getElementById("image-modal");
-    let img = document.getElementById("modal-img");
+    var modal = document.getElementById("image-modal");
+    var img = document.getElementById("modal-img");
 
-    modal.style.display = "flex";
-    img.src = src;
+    if (modal && img) {
+        modal.style.display = "flex";
+        img.src = src;
+    }
 }
 
 function closeImage() {
-    document.getElementById("image-modal").style.display = "none";
-}
-
-// ==========================
-// POPUP MESSAGE
-// ==========================
-function showMessage(text) {
-    let msg = document.createElement("div");
-    msg.className = "added-msg";
-    msg.innerText = text;
-
-    document.body.appendChild(msg);
-
-    setTimeout(() => {
-        msg.remove();
-    }, 2000);
+    var modal = document.getElementById("image-modal");
+    if (modal) {
+        modal.style.display = "none";
+    }
 }
 
 // ==========================
@@ -184,8 +172,5 @@ function showMessage(text) {
 // ==========================
 window.onload = function () {
     updateCartCount();
-
-    if (document.getElementById("cart-items")) {
-        showCart();
-    }
+    showCart();
 };

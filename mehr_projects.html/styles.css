@@ -20,15 +20,35 @@ body {
     line-height: 1.6;
 }
 
-/* REMOVE EXTRA PAGE GAPS */
 main {
     margin: 0;
     padding: 0;
 }
 
-h1, h2, h3, p {
-    margin-left: 0;
-    margin-right: 0;
+/* ========================== */
+/* HEADINGS (CLEAN + VALIDATOR SAFE) */
+/* ========================== */
+
+h1 {
+    margin: 0 0 10px 0;
+    font-size: 40px;
+}
+
+h2 {
+    margin: 0 0 25px 0;
+    text-align: center;
+}
+
+h3 {
+    margin: 12px 0 8px 0;
+}
+
+/* ========================== */
+/* PARAGRAPHS */
+/* ========================== */
+
+p {
+    margin: 5px 0;
 }
 
 /* ========================== */
@@ -39,7 +59,7 @@ h1, h2, h3, p {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 12px 30px; /* REDUCED SPACE */
+    padding: 12px 30px;
     background: #f5d7cf;
 }
 
@@ -65,19 +85,8 @@ h1, h2, h3, p {
 
 .hero {
     text-align: center;
-    padding: 30px 20px; /* FIXED LARGE EMPTY SPACE */
+    padding: 30px 20px;
     background: #fff;
-    margin: 0;
-}
-
-.hero h1 {
-    margin-top: 0;
-    margin-bottom: 10px;
-    font-size: 40px;
-}
-
-.hero p {
-    margin: 5px 0;
 }
 
 /* ========================== */
@@ -85,13 +94,7 @@ h1, h2, h3, p {
 /* ========================== */
 
 .products {
-    padding: 30px 40px; /* SLIGHTLY REDUCED */
-}
-
-h2 {
-    text-align: center;
-    margin-top: 0;
-    margin-bottom: 25px;
+    padding: 30px 40px;
 }
 
 .layout {
@@ -127,10 +130,6 @@ h2 {
     cursor: pointer;
 }
 
-.card h3 {
-    margin: 12px 0 8px;
-}
-
 .card button {
     margin-top: 10px;
     padding: 6px 12px;
@@ -138,7 +137,6 @@ h2 {
     background: #f8f8f8;
     cursor: pointer;
     border-radius: 5px;
-    transition: 0.3s ease;
 }
 
 .card button:hover {
@@ -148,7 +146,6 @@ h2 {
 .card p {
     color: #c0392b;
     font-weight: bold;
-    margin: 8px 0;
 }
 
 /* ========================== */
@@ -205,16 +202,11 @@ h2 {
 footer {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
     text-align: center;
     padding: 20px;
     background: #f5d7cf;
     margin-top: 20px;
-}
-
-footer p {
-    margin: 5px 0;
 }
 
 /* ========================== */
@@ -227,12 +219,11 @@ footer p {
     align-items: center;
     gap: 20px;
 }
-
 .cart-item {
-    background: white;
+    background-color: white;
     max-width: 320px;
-    width: 100%;
-    margin: 0 auto;
+    margin-left: auto;
+    margin-right: auto;
     padding: 15px;
     border-radius: 15px;
     text-align: center;
@@ -269,7 +260,6 @@ footer p {
     justify-content: center;
     align-items: center;
     gap: 10px;
-    margin-top: 8px;
 }
 
 .qty-controls button {
@@ -279,13 +269,6 @@ footer p {
     color: white;
     border: none;
     border-radius: 5px;
-    cursor: pointer;
-}
-
-.qty-controls span {
-    min-width: 20px;
-    text-align: center;
-    font-weight: bold;
 }
 
 /* ========================== */
@@ -299,17 +282,10 @@ footer p {
     background: rgba(0,0,0,0.8);
     justify-content: center;
     align-items: center;
-    z-index: 999;
-}
-
-.image-modal img {
-    max-width: 90%;
-    max-height: 90%;
-    border-radius: 10px;
 }
 
 /* ========================== */
-/* TOTAL + ACTIONS */
+/* CART TOTAL + ACTIONS */
 /* ========================== */
 
 .cart-total {
@@ -329,7 +305,6 @@ footer p {
     background: black;
     color: white;
     border-radius: 6px;
-    cursor: pointer;
 }
 
 .cart-actions button:hover {
@@ -337,7 +312,7 @@ footer p {
 }
 
 /* ========================== */
-/* POPUP MESSAGE */
+/* MESSAGE POPUP */
 /* ========================== */
 
 .added-msg {
@@ -348,14 +323,51 @@ footer p {
     color: white;
     padding: 12px 18px;
     border-radius: 8px;
-    font-size: 14px;
-    z-index: 9999;
-    animation: fadeMsg 2s ease;
 }
 
-@keyframes fadeMsg {
-    0% { opacity: 0; transform: translateY(-10px); }
-    10% { opacity: 1; transform: translateY(0); }
-    80% { opacity: 1; }
-    100% { opacity: 0; }
+/* ========================== */
+/* CHECKOUT BOX */
+/* ========================== */
+
+.checkout-box {
+    max-width: 600px;
+    margin: 30px auto;
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    text-align: center;
+}
+
+.checkout-box ul {
+    list-style: none;
+    padding: 0;
+    margin: 15px 0;
+}
+
+.checkout-box ul li {
+    margin: 8px 0;
+}
+
+.checkout-box .warning {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+.checkout-box .note {
+    font-size: 14px;
+    color: #555;
+}
+
+.checkout-box button {
+    margin: 10px 5px;
+    padding: 10px 18px;
+    border: none;
+    background: black;
+    color: white;
+    border-radius: 6px;
+}
+
+.checkout-box button:hover {
+    background: #c0392b;
 }

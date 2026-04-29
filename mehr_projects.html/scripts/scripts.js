@@ -1,23 +1,15 @@
 let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
-// TEMP QUANTITY (START AT 0)
-let tempQty = {
-    outfit1: 0,
-    outfit2: 0,
-    outfit3: 0,
-    outfit4: 0,
-    outfit5: 0,
-    outfit6: 0,
-    outfit7: 0,
-    outfit8: 0
-};
-
+// ==========================
 // SAVE CART
+// ==========================
 function saveCart() {
     localStorage.setItem("cart", JSON.stringify(cart));
 }
 
-// CART COUNT (HIDE 0)
+// ==========================
+// CART COUNT
+// ==========================
 function updateCartCount() {
     let count = document.getElementById("cart-count");
 
@@ -27,52 +19,40 @@ function updateCartCount() {
     }
 }
 
-// CHANGE QUANTITY (+ / -)
-function changeQty(id, change) {
-    tempQty[id] += change;
-
-    if (tempQty[id] < 0) tempQty[id] = 0;
-
-    let el = document.getElementById("qty-" + id);
-    if (el) el.innerText = tempQty[id];
-}
-
-// ADD TO CART
+// ==========================
+// ADD TO CART (GALLERY)
+// ==========================
 function addToCart(name, price, image, id) {
 
-    let qty = tempQty[id];
+    let sizeSelect = document.getElementById("size-" + id);
+    let size = sizeSelect ? sizeSelect.value : "N/A";
 
-    if (qty === 0) {
-        showMessage("Select quantity first");
-        return;
-    }
-
-    let existing = cart.find(item => item.name === name);
+    let existing = cart.find(
+        item => item.name === name && item.size === size
+    );
 
     if (existing) {
-        existing.quantity += qty;
+        existing.quantity += 1;
     } else {
         cart.push({
-            name,
-            price,
-            image,
-            quantity: qty
+            name: name,
+            price: price,
+            image: image,
+            size: size,
+            quantity: 1
         });
     }
 
-    // reset quantity after adding
-    tempQty[id] = 0;
-    let el = document.getElementById("qty-" + id);
-    if (el) el.innerText = 0;
-
     saveCart();
     updateCartCount();
-
     showMessage("Added to cart!");
 }
 
+// ==========================
 // SHOW CART PAGE
+// ==========================
 function showCart() {
+
     let output = "";
     let total = 0;
 
@@ -90,6 +70,7 @@ function showCart() {
                 <div class="cart-info">
 
                     <h3>${item.name}</h3>
+                    <p>Size: ${item.size}</p>
 
                     <p class="price">$${item.price}</p>
 
@@ -117,7 +98,9 @@ function showCart() {
     document.getElementById("total").innerText = total;
 }
 
-// CART QTY CONTROL
+// ==========================
+// QTY CONTROLS (CART PAGE)
+// ==========================
 function increaseQty(i) {
     cart[i].quantity++;
     saveCart();
@@ -137,7 +120,9 @@ function decreaseQty(i) {
     updateCartCount();
 }
 
+// ==========================
 // CLEAR CART
+// ==========================
 function clearCart() {
     cart = [];
     saveCart();
@@ -145,17 +130,43 @@ function clearCart() {
     updateCartCount();
 }
 
+// ==========================
+// PAY NOW BUTTON
+// ==========================
+function payNow() {
+    if (cart.length === 0) {
+        showMessage("Cart is empty!");
+        return;
+    }
+
+    let total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
+
+    alert("Payment Successful!\nTotal Paid: $" + total);
+
+    cart = [];
+    saveCart();
+    showCart();
+    updateCartCount();
+}
+
+// ==========================
 // IMAGE ZOOM
+// ==========================
 function openImage(src) {
-    document.getElementById("image-modal").style.display = "flex";
-    document.getElementById("modal-img").src = src;
+    let modal = document.getElementById("image-modal");
+    let img = document.getElementById("modal-img");
+
+    modal.style.display = "flex";
+    img.src = src;
 }
 
 function closeImage() {
     document.getElementById("image-modal").style.display = "none";
 }
 
+// ==========================
 // POPUP MESSAGE
+// ==========================
 function showMessage(text) {
     let msg = document.createElement("div");
     msg.className = "added-msg";
@@ -168,7 +179,9 @@ function showMessage(text) {
     }, 2000);
 }
 
+// ==========================
 // INIT
+// ==========================
 window.onload = function () {
     updateCartCount();
 

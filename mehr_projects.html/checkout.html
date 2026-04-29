@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Checkout - Mehr Shop</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+<!-- HEADER -->
+<div id="header"></div>
+
+<main>
+
+<section class="hero">
+    <h1>Checkout</h1>
+    <p>Complete your order securely</p>
+</section>
+
+<section class="products">
+
+    <div class="checkout-box">
+
+        <h2>Payment Information</h2>
+
+        <p class="warning">
+            ⚠ We do NOT accept online card payments at the moment.
+        </p>
+
+        <p>You can pay using the following methods:</p>
+
+        <ul>
+            <li>🏪 Pay in-store (cash)</li>
+            <li>💳 PayPal</li>
+            <li>📱 Venmo</li>
+        </ul>
+
+        <p class="note">
+            After placing your order, we will contact you with payment details.
+        </p>
+
+        <hr>
+
+        <h3>Your Total:</h3>
+        <h2>$<span id="checkout-total">0</span></h2>
+
+        <button onclick="goBack()">
+            Continue Shopping
+        </button>
+
+        <button onclick="placeOrder()">
+            Place Order
+        </button>
+
+    </div>
+
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<div id="footer"></div>
+
+<script src="scripts/include.js"></script>
+<script src="scripts/scripts.js"></script>
+
+<!-- ========================== -->
+<!-- CHECKOUT JS (IMPORTANT) -->
+<!-- ========================== -->
+
+<script>
+    // LOAD TOTAL FROM CART
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+    let total = cart.reduce((sum, item) => {
+        return sum + item.price * item.quantity;
+    }, 0);
+
+    document.getElementById("checkout-total").innerText = total;
+
+    // BACK TO SHOP
+    function goBack() {
+        window.location.href = "gallery.html";
+    }
+
+    // PLACE ORDER
+    function placeOrder() {
+        alert("Order placed successfully! We will contact you for payment.");
+        localStorage.removeItem("cart");
+        window.location.href = "index.html";
+    }
+</script>
+<script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
+
+</body>
+</html>

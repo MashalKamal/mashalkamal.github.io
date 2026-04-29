@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Gallery</title>
+    <title>Gallery Shop</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
 
+<!-- HEADER -->
 <div id="header"></div>
 
 <main>
@@ -21,180 +22,157 @@
 
     <div class="layout">
 
-        <!-- ================= OUTFIT 1 ================= -->
+        <!-- ================= OUTIFT 1 ================= -->
         <div class="card">
             <img src="images/outfit1.jpg" onclick="openImage(this.src)">
             <h3>Indian Salwar Kameez</h3>
-            <p class="desc">Elegant traditional outfit with soft fabric and detailed embroidery.</p>
+            <p class="desc">Elegant traditional outfit with soft fabric and embroidery.</p>
+
+            <!-- PRICE (MOVED TOP) -->
+            <p class="price">$140</p>
 
             <select id="size-outfit1">
-                <option>S</option><option>M</option><option>L</option>
+                <option>S</option>
+                <option>M</option>
+                <option>L</option>
             </select>
-
-            <div class="qty-controls">
-                <button onclick="changeQty('outfit1', -1)">-</button>
-                <span id="qty-outfit1">0</span>
-                <button onclick="changeQty('outfit1', 1)">+</button>
-            </div>
 
             <button onclick="addToCart('Indian Salwar Kameez', 140, 'images/outfit1.jpg', 'outfit1')">
                 Add to Cart
             </button>
-            <p>$140</p>
         </div>
 
-        <!-- ================= OUTFIT 2 ================= -->
+        <!-- ================= OUTIFT 2 ================= -->
         <div class="card">
             <img src="images/outfit2.jpg" onclick="openImage(this.src)">
             <h3>Lehenga</h3>
-            <p class="desc">Beautiful lehenga designed for weddings and festive occasions.</p>
+            <p class="desc">Beautiful lehenga for weddings and special events.</p>
+
+            <p class="price">$150</p>
 
             <select id="size-outfit2">
-                <option>S</option><option>M</option><option>L</option>
+                <option>S</option>
+                <option>M</option>
+                <option>L</option>
             </select>
-
-            <div class="qty-controls">
-                <button onclick="changeQty('outfit2', -1)">-</button>
-                <span id="qty-outfit2">0</span>
-                <button onclick="changeQty('outfit2', 1)">+</button>
-            </div>
 
             <button onclick="addToCart('Lehenga', 150, 'images/outfit2.jpg', 'outfit2')">
                 Add to Cart
             </button>
-            <p>$150</p>
         </div>
 
         <!-- ================= OUTFIT 3 ================= -->
         <div class="card">
             <img src="images/outfit3.jpg" onclick="openImage(this.src)">
             <h3>Modern Ethnic Outfit</h3>
-            <p class="desc">Stylish blend of modern and traditional cultural fashion.</p>
+            <p class="desc">Fusion of modern and traditional fashion style.</p>
+
+            <p class="price">$120</p>
 
             <select id="size-outfit3">
-                <option>S</option><option>M</option><option>L</option>
+                <option>S</option>
+                <option>M</option>
+                <option>L</option>
             </select>
-
-            <div class="qty-controls">
-                <button onclick="changeQty('outfit3', -1)">-</button>
-                <span id="qty-outfit3">0</span>
-                <button onclick="changeQty('outfit3', 1)">+</button>
-            </div>
 
             <button onclick="addToCart('Modern Ethnic Outfit', 120, 'images/outfit3.jpg', 'outfit3')">
                 Add to Cart
             </button>
-            <p>$120</p>
         </div>
 
         <!-- ================= OUTFIT 4 ================= -->
         <div class="card">
             <img src="images/outfit4.jpg" onclick="openImage(this.src)">
             <h3>Royal Scarlet Anarkali</h3>
-            <p class="desc">Luxury scarlet Anarkali designed for elegant celebrations.</p>
+            <p class="desc">Luxury scarlet outfit for special occasions.</p>
+
+            <p class="price">$110</p>
 
             <select id="size-outfit4">
-                <option>S</option><option>M</option><option>L</option>
+                <option>S</option>
+                <option>M</option>
+                <option>L</option>
             </select>
-
-            <div class="qty-controls">
-                <button onclick="changeQty('outfit4', -1)">-</button>
-                <span id="qty-outfit4">0</span>
-                <button onclick="changeQty('outfit4', 1)">+</button>
-            </div>
 
             <button onclick="addToCart('Royal Scarlet Anarkali', 110, 'images/outfit4.jpg', 'outfit4')">
                 Add to Cart
             </button>
-            <p>$110</p>
         </div>
 
         <!-- ================= OUTFIT 5 ================= -->
         <div class="card">
             <img src="images/outfit5.jpg" onclick="openImage(this.src)">
             <h3>Maroon Anarkali</h3>
-            <p class="desc">Elegant maroon outfit with traditional embroidery details.</p>
+            <p class="desc">Elegant maroon traditional embroidered outfit.</p>
+
+            <p class="price">$140</p>
 
             <select id="size-outfit5">
-                <option>S</option><option>M</option><option>L</option>
+                <option>S</option>
+                <option>M</option>
+                <option>L</option>
             </select>
-
-            <div class="qty-controls">
-                <button onclick="changeQty('outfit5', -1)">-</button>
-                <span id="qty-outfit5">0</span>
-                <button onclick="changeQty('outfit5', 1)">+</button>
-            </div>
 
             <button onclick="addToCart('Maroon Anarkali', 140, 'images/outfit5.jpg', 'outfit5')">
                 Add to Cart
             </button>
-            <p>$140</p>
         </div>
 
         <!-- ================= OUTFIT 6 ================= -->
         <div class="card">
             <img src="images/outfit6.jpg" onclick="openImage(this.src)">
             <h3>Lavender Suit</h3>
-            <p class="desc">Soft lavender outfit perfect for light festive occasions.</p>
+            <p class="desc">Soft lavender outfit for light occasions.</p>
+
+            <p class="price">$120</p>
 
             <select id="size-outfit6">
-                <option>S</option><option>M</option><option>L</option>
+                <option>S</option>
+                <option>M</option>
+                <option>L</option>
             </select>
-
-            <div class="qty-controls">
-                <button onclick="changeQty('outfit6', -1)">-</button>
-                <span id="qty-outfit6">0</span>
-                <button onclick="changeQty('outfit6', 1)">+</button>
-            </div>
 
             <button onclick="addToCart('Lavender Suit', 120, 'images/outfit6.jpg', 'outfit6')">
                 Add to Cart
             </button>
-            <p>$120</p>
         </div>
 
         <!-- ================= OUTFIT 7 ================= -->
         <div class="card">
             <img src="images/outfit7.jpg" onclick="openImage(this.src)">
             <h3>Anarkali Suit</h3>
-            <p class="desc">Classic Anarkali suit with modern tailoring design.</p>
+            <p class="desc">Classic modern Anarkali design.</p>
+
+            <p class="price">$130</p>
 
             <select id="size-outfit7">
-                <option>S</option><option>M</option><option>L</option>
+                <option>S</option>
+                <option>M</option>
+                <option>L</option>
             </select>
-
-            <div class="qty-controls">
-                <button onclick="changeQty('outfit7', -1)">-</button>
-                <span id="qty-outfit7">0</span>
-                <button onclick="changeQty('outfit7', 1)">+</button>
-            </div>
 
             <button onclick="addToCart('Anarkali Suit', 130, 'images/outfit7.jpg', 'outfit7')">
                 Add to Cart
             </button>
-            <p>$130</p>
         </div>
 
         <!-- ================= OUTFIT 8 ================= -->
         <div class="card">
             <img src="images/outfit8.png" onclick="openImage(this.src)">
             <h3>Traditional Lehenga</h3>
-            <p class="desc">Premium lehenga designed for weddings and cultural events.</p>
+            <p class="desc">Premium wedding lehenga design.</p>
+
+            <p class="price">$140</p>
 
             <select id="size-outfit8">
-                <option>S</option><option>M</option><option>L</option>
+                <option>S</option>
+                <option>M</option>
+                <option>L</option>
             </select>
 
-            <div class="qty-controls">
-                <button onclick="changeQty('outfit8', -1)">-</button>
-                <span id="qty-outfit8">0</span>
-                <button onclick="changeQty('outfit8', 1)">+</button>
-            </div>
-
-            <button onclick="addToCart('Traditional Lehenga', 140, 'images/outfit8.jpg', 'outfit8')">
+            <button onclick="addToCart('Traditional Lehenga', 140, 'images/outfit8.png', 'outfit8')">
                 Add to Cart
             </button>
-            <p>$140</p>
         </div>
 
     </div>
@@ -202,15 +180,16 @@
 
 </main>
 
-<!-- IMAGE ZOOM -->
+<!-- IMAGE MODAL -->
 <div id="image-modal" class="image-modal" onclick="closeImage()">
     <img id="modal-img">
 </div>
 
+<!-- FOOTER -->
 <div id="footer"></div>
 
-<script src="scripts.js"></script>
 <script src="scripts/include.js"></script>
+<script src="scripts/scripts.js"></script>
 
 </body>
 </html>
